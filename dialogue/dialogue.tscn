@@ -1,0 +1,458 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://dialogue/dialogue.gd" type="Script" id=1]
+[ext_resource path="res://dialogue/images/default_background.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Button
+
+func _pressed ():
+	for i in get_node(\"/root/Control\").nextActions:
+		InputMap.action_add_event (\"next\", i)
+	get_node (\"/root/Control/Panel\").show ()
+	get_node (\"/root/Control/Menu\").hide ()"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends Button
+
+func _pressed ():
+	get_node (\"/root/Control\").p = PopupPanel.new ()
+	var i = ItemList.new ()
+	i.set_custom_minimum_size (Vector2 (100, 100))
+	i.add_item (\"New Save\")
+	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_user_data_dir ())):
+		i.add_item (x[0])
+	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_SaveList_ItemList_item_activated\")
+	var v = VBoxContainer.new ()
+	var h = HBoxContainer.new ()
+	var b = Button.new ()
+	b.set_text (\"OK\")
+	var s = GDScript.new ()
+	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tif get_parent ().get_parent ().get_child (0).get_selected_items ().size () == 1:\\n\\t\\tget_node (\\\"/root/Control\\\")._on_LoadList_ItemList_item_activated (get_parent ().get_parent ().get_child (0).get_selected_items ()[0])\")
+	s.reload ()
+	b.set_script (s)
+	h.add_child (b)
+	b = Button.new ()
+	b.set_text (\"Cancel\")
+	s = GDScript.new ()
+	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tget_parent ().get_parent ().get_parent ().queue_free ()\")
+	s.reload ()
+	b.set_script (s)
+	h.add_child (b)
+	v.add_child (i)
+	v.add_child (h)
+	get_node (\"/root/Control\").p.add_child (v)
+	add_child (get_node (\"/root/Control\").p)
+	get_node (\"/root/Control\").p.popup_centered (Vector2 (100, 128))
+"
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Button
+
+func _pressed ():
+	get_node (\"/root/Control\").p = PopupPanel.new ()
+	var i = ItemList.new ()
+	i.set_custom_minimum_size (Vector2 (100, 100))
+	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_user_data_dir ())):
+		i.add_item (x[0])
+	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_LoadList_ItemList_item_activated\")
+	var v = VBoxContainer.new ()
+	var h = HBoxContainer.new ()
+	var b = Button.new ()
+	b.set_text (\"OK\")
+	var s = GDScript.new ()
+	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tif get_parent ().get_parent ().get_child (0).get_selected_items ().size () == 1:\\n\\t\\tget_node (\\\"/root/Control\\\")._on_LoadList_ItemList_item_activated (get_parent ().get_parent ().get_child (0).get_selected_items ()[0])\")
+	s.reload ()
+	b.set_script (s)
+	h.add_child (b)
+	b = Button.new ()
+	b.set_text (\"Cancel\")
+	s = GDScript.new ()
+	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tget_parent ().get_parent ().get_parent ().queue_free ()\")
+	s.reload ()
+	b.set_script (s)
+	h.add_child (b)
+	v.add_child (i)
+	v.add_child (h)
+	get_node (\"/root/Control\").p.add_child (v)
+	add_child (get_node (\"/root/Control\").p)
+	get_node (\"/root/Control\").p.popup_centered (Vector2 (100, 128)) # To accomidate buttons
+"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Button
+
+func _pressed ():
+	if true:
+		get_tree ().change_scene (\"menu/menu.tscn\")
+	else:
+		get_node (\"/root/Control/Panel\").show ()
+		get_parent ().get_parent ().hide ()
+"
+
+[sub_resource type="Theme" id=5]
+
+
+[sub_resource type="GDScript" id=6]
+
+script/source = "extends Button
+
+func _pressed():
+	get_node(\"/root/Control\").next()
+"
+
+[sub_resource type="GDScript" id=7]
+
+script/source = "extends TextureRect
+"
+
+[sub_resource type="ShortCut" id=8]
+
+
+[sub_resource type="GDScript" id=9]
+
+script/source = "extends Button
+
+func _pressed ():
+	get_parent ().get_parent ().next ()"
+
+[sub_resource type="GDScript" id=10]
+
+script/source = "extends Button
+
+func _pressed ():
+	get_parent ().get_parent ().prev ()
+	"
+
+[sub_resource type="GDScript" id=11]
+
+script/source = "extends VBoxContainer
+"
+
+[node name="Control" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+[node name="Menu" type="Panel" parent="." index="0"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Menu" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+use_top_left = false
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/CenterContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 477.0
+margin_top = 254.0
+margin_right = 546.0
+margin_bottom = 346.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 1
+_sections_unfolded = [ "Focus", "Grow Direction", "Hint", "Margin", "Rect" ]
+
+[node name="Continue" type="Button" parent="Menu/CenterContainer/VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 69.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Continue"
+flat = false
+align = 1
+script = SubResource( 1 )
+
+[node name="Save" type="Button" parent="Menu/CenterContainer/VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 24.0
+margin_right = 69.0
+margin_bottom = 44.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+script = SubResource( 2 )
+
+[node name="Load" type="Button" parent="Menu/CenterContainer/VBoxContainer" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 48.0
+margin_right = 69.0
+margin_bottom = 68.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Load"
+flat = false
+align = 1
+script = SubResource( 3 )
+
+[node name="Exit" type="Button" parent="Menu/CenterContainer/VBoxContainer" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 72.0
+margin_right = 69.0
+margin_bottom = 92.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Exit"
+flat = false
+align = 1
+script = SubResource( 4 )
+
+[node name="Panel" type="Panel" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+theme = SubResource( 5 )
+_sections_unfolded = [ "Theme", "Visibility" ]
+
+[node name="BackgroundSound" type="AudioStreamPlayer" parent="Panel" index="0"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DialogueSound" type="AudioStreamPlayer" parent="Panel" index="1"]
+
+stream = null
+volume_db = 0.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="PictNext" type="Button" parent="Panel" index="2"]
+
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -512.0
+margin_top = -300.0
+margin_right = 512.0
+margin_bottom = 300.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+flat = true
+align = 1
+script = SubResource( 6 )
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Visibility" ]
+
+[node name="BackgroundImage" type="TextureRect" parent="Panel/PictNext" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+script = SubResource( 7 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="LabelDialog" type="Label" parent="Panel" index="3"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -22.0
+grow_vertical = 0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_constants/shadow_offset_x = 2
+align = 1
+valign = 2
+autowrap = true
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Anchor", "Grow Direction", "Margin" ]
+
+[node name="ButtonNext" type="Button" parent="Panel" index="4"]
+
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -36.0
+margin_top = -20.0
+rect_pivot_offset = Vector2( 0, 0 )
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = SubResource( 8 )
+group = null
+text = ">>>"
+flat = false
+align = 1
+script = SubResource( 9 )
+
+[node name="ButtonPrev" type="Button" parent="Panel" index="5"]
+
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+margin_top = -20.0
+margin_right = 36.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+disabled = true
+toggle_mode = false
+action_mode = 0
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "<<<"
+flat = false
+align = 1
+script = SubResource( 10 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="DialogueControl" type="VBoxContainer" parent="Panel" index="6"]
+
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -99.0
+margin_top = -57.0
+margin_right = 99.0
+margin_bottom = 57.0
+rect_pivot_offset = Vector2( 0, 0 )
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+alignment = 0
+script = SubResource( 11 )
+_sections_unfolded = [ "Anchor", "Margin" ]
+
+

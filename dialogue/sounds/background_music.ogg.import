@@ -1,0 +1,18 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/background_music.ogg-8cd33f3f5e6fc80a29aceb390da5b365.oggstr"
+
+[deps]
+
+source_file="res://dialogue/sounds/background_music.ogg"
+source_md5="b7026c016e19bb7bee937b9bd3a7dda8"
+
+dest_files=[ "res://.import/background_music.ogg-8cd33f3f5e6fc80a29aceb390da5b365.oggstr" ]
+dest_md5="edcf9cd682e078298b31b2c5f6d0a24f"
+
+[params]
+
+loop=true
+loop_offset=0

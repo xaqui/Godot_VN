@@ -1,0 +1,14 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/volumeTest.ogg-ff72f318e519aab9afcfef5bceda8a8d.oggstr"
+
+[deps]
+
+source_md5="4e916d3b293c272307b9a3c6912bbdee"
+
+[params]
+
+loop=true
+loop_offset=0
