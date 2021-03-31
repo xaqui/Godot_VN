@@ -3,7 +3,7 @@
 [ext_resource path="res://menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://menu/menu_background.tex" type="Texture" id=2]
 [ext_resource path="res://menu/MenuSound.ogg" type="AudioStream" id=3]
-[ext_resource path="res://dialogue/font.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://dialogue/fonts/font.ttf" type="DynamicFontData" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 64
@@ -14,7 +14,9 @@ script/source = "extends Button
 
 func _pressed ():
 	get_node (\"/root/dialogue_loader\").page = 0
-	get_tree ().change_scene (\"res://dialogue/dialogue.tscn\")
+	var err = get_tree ().change_scene (\"dialogue/dialogue.tscn\")
+	if err:
+		print(\"Can't change scene!\")
 "
 
 [sub_resource type="GDScript" id=3]
@@ -44,7 +46,9 @@ func _pressed ():
 script/source = "extends Button
 
 func _pressed ():
-	get_tree ().change_scene (\"dialogue/dialogue_editor.tscn\")
+	var err = get_tree ().change_scene (\"dialogue/dialogue_editor.tscn\")
+	if err:
+		print(\"Can't change scene!\")
 "
 
 [sub_resource type="GDScript" id=6]
@@ -69,6 +73,9 @@ anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0

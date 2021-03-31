@@ -74,6 +74,8 @@ func choice (n):
 
 func go_to_page (i):
 	var x = data[i]
+	var d = DynamicFontData.new ()
+	var f = DynamicFont.new ()
 	if x.has ("b"):
 		BackgroundImage.set_texture (load (x["b"]))
 		clear_items () # We wont need extra items when changing scene
@@ -84,15 +86,13 @@ func go_to_page (i):
 	if x.has ("t"):
 		LabelDialog.set_text (x["t"])
 	if x.has ("f"):
-		var d = DynamicFontData.new ()
-		d.set_path (x["f"].insert (0, ""))
-		var f = DynamicFont.new ()
+		d.set_font_path (x["f"])
 		f.set_font_data (d)
-		#LabelDialog.get_theme ().set_default_font (f)
+		LabelDialog.get_theme ().set_default_font (f)
 	if x.has ("c"):
 		LabelDialog.add_color_override ("font_color", Color (x["c"]))
 	if x.has ("ts"):
-		var f = LabelDialog.get_theme ().get_default_font ()
+		f = LabelDialog.get_theme ().get_default_font ()
 		f.set_size (x["ts"])
 		LabelDialog.get_theme ().set_default_font (f)
 		LabelDialog.set_margin (MARGIN_BOTTOM, text_margin)
@@ -160,7 +160,9 @@ func next ():
 		go_to_page (get_node ("/root/dialogue_loader").page)
 		ButtonPrev.set_disabled (false)
 	else:
-		get_tree ().change_scene ("menu/menu.tscn")
+		var err = get_tree ().change_scene ("menu/menu.tscn")
+		if err :
+			print("Can't change scene!")
 
 func prev ():
 	if get_node ("/root/dialogue_loader").page > 0:
@@ -225,7 +227,7 @@ func _ready ():
 	ButtonPrev = get_node ("Panel/ButtonPrev")
 	var t = Theme.new ()
 	var d = DynamicFontData.new ()
-	d.set_font_path ("dialogue/font.ttf") # Need to override the bitmap font with a vector font
+	d.set_font_path ("dialogue/fonts/font.ttf") # Need to override the bitmap font with a vector font
 	var f = DynamicFont.new ()
 	f.set_font_data (d)
 	f.set_size (12)
