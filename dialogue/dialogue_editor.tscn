@@ -4,7 +4,6 @@
 [ext_resource path="res://dialogue/dialogue/font.ttf" type="DynamicFontData" id=2]
 
 [sub_resource type="GDScript" id=1]
-
 script/source = "extends Button
 
 func pressed ():
@@ -19,7 +18,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=2]
-
 script/source = "extends Button
 
 func pressed ():
@@ -27,7 +25,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=3]
-
 script/source = "extends Button
 
 func pressed ():
@@ -36,7 +33,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=4]
-
 script/source = "extends Button
 
 func pressed ():
@@ -45,7 +41,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=5]
-
 script/source = "extends Button
 
 func pressed ():
@@ -60,17 +55,14 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=6]
-
 script/source = "extends SpinBox
 "
 
 [sub_resource type="GDScript" id=7]
-
 script/source = "extends HSlider
 "
 
 [sub_resource type="GDScript" id=8]
-
 script/source = "extends Button
 
 func pressed ():
@@ -79,7 +71,6 @@ func pressed ():
 	get_node (\"/root/Panel/VBoxContainer/SceneNumber/CurrentSceneNumber\").set_value (get_node (\"/root/Panel/\").currentScene + 1) "
 
 [sub_resource type="GDScript" id=9]
-
 script/source = "extends Button
 
 func pressed ():
@@ -89,7 +80,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=10]
-
 script/source = "extends Button
 
 func pressed ():
@@ -100,7 +90,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=11]
-
 script/source = "extends Button
 
 func pressed ():
@@ -111,7 +100,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=12]
-
 script/source = "extends Button
 
 func pressed ():
@@ -122,7 +110,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=13]
-
 script/source = "extends CheckBox
 
 func _pressed ():
@@ -130,12 +117,10 @@ func _pressed ():
 "
 
 [sub_resource type="GDScript" id=14]
-
 script/source = "extends TextEdit
 "
 
 [sub_resource type="GDScript" id=15]
-
 script/source = "extends LinkButton
 
 func pressed ():
@@ -150,7 +135,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=16]
-
 script/source = "extends Button
 
 func pressed ():
@@ -170,7 +154,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=17]
-
 script/source = "extends LinkButton
 
 func pressed ():
@@ -185,7 +168,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=18]
-
 script/source = "extends Button
 
 func _pressed ():
@@ -202,7 +184,6 @@ func _pressed ():
 "
 
 [sub_resource type="GDScript" id=19]
-
 script/source = "extends LinkButton
 
 func pressed ():
@@ -217,7 +198,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=20]
-
 script/source = "extends Button
 
 func _pressed ():
@@ -234,7 +214,6 @@ func _pressed ():
 "
 
 [sub_resource type="GDScript" id=21]
-
 script/source = "extends LinkButton
 
 func pressed ():
@@ -249,28 +228,21 @@ func pressed ():
 "
 
 [sub_resource type="DynamicFont" id=22]
-
 size = 0
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 2 )
 
 [sub_resource type="Theme" id=23]
-
 default_font = SubResource( 22 )
 
 [sub_resource type="GDScript" id=24]
-
 script/source = "extends CheckBox
 "
 
 [sub_resource type="GDScript" id=25]
-
 script/source = "extends LineEdit
 "
 
 [sub_resource type="GDScript" id=26]
-
 script/source = "extends ColorPickerButton
 
 func _pressed ():
@@ -280,18 +252,15 @@ func _pressed ():
 	"
 
 [sub_resource type="GDScript" id=27]
-
 script/source = "extends CheckBox
 
 "
 
 [sub_resource type="GDScript" id=28]
-
 script/source = "extends ItemList
 "
 
 [sub_resource type="GDScript" id=29]
-
 script/source = "extends LinkButton
 
 func pressed ():
@@ -307,7 +276,6 @@ func pressed ():
 "
 
 [sub_resource type="GDScript" id=30]
-
 script/source = "extends Button
 
 func _pressed ():
@@ -321,7 +289,6 @@ func _pressed ():
 "
 
 [sub_resource type="GDScript" id=31]
-
 script/source = "extends Button
 
 func _pressed ():
@@ -333,18 +300,15 @@ func _pressed ():
 "
 
 [sub_resource type="GDScript" id=32]
-
 script/source = "extends CheckBox
 
 "
 
 [sub_resource type="GDScript" id=33]
-
 script/source = "extends ItemList
 "
 
 [sub_resource type="GDScript" id=34]
-
 script/source = "extends Button
 
 func _pressed ():
@@ -359,7 +323,6 @@ func _pressed ():
 	"
 
 [sub_resource type="GDScript" id=35]
-
 script/source = "extends Button
 
 func _pressed ():
@@ -371,2051 +334,663 @@ func _pressed ():
 "
 
 [sub_resource type="GDScript" id=36]
-
 script/source = "extends CheckBox
 
 "
 
 [sub_resource type="GDScript" id=37]
-
 script/source = "extends LineEdit
 "
 
 [sub_resource type="GDScript" id=38]
-
 script/source = "extends CheckBox
 "
 
 [sub_resource type="GDScript" id=39]
-
 script/source = "extends LineEdit
 "
 
 [node name="Panel" type="Panel"]
-
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
-anchor_bottom = 0.0
 margin_bottom = 510.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 1
 
-[node name="MainButtons" type="HBoxContainer" parent="VBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MainButtons" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 55.0
 margin_right = 1024.0
 margin_bottom = 75.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "File controls"
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 1
-_sections_unfolded = [ "Hint" ]
 
-[node name="LoadButton" type="Button" parent="VBoxContainer/MainButtons" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LoadButton" type="Button" parent="VBoxContainer/MainButtons"]
 margin_left = 400.0
 margin_right = 442.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Load a new file"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Load"
-flat = false
-align = 1
 script = SubResource( 1 )
-_sections_unfolded = [ "Anchor", "Focus", "Hint", "Mouse" ]
 
-[node name="SaveButton" type="Button" parent="VBoxContainer/MainButtons" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SaveButton" type="Button" parent="VBoxContainer/MainButtons"]
 margin_left = 446.0
 margin_right = 487.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Save changes to file"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Save"
-flat = false
-align = 1
 script = SubResource( 2 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="TestButton" type="Button" parent="VBoxContainer/MainButtons" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TestButton" type="Button" parent="VBoxContainer/MainButtons"]
 margin_left = 491.0
 margin_right = 530.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Test your changes"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Test"
-flat = false
-align = 1
 script = SubResource( 3 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="QuitButton" type="Button" parent="VBoxContainer/MainButtons" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="QuitButton" type="Button" parent="VBoxContainer/MainButtons"]
 margin_left = 534.0
 margin_right = 574.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Exit the editor to main menu"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Quit"
-flat = false
-align = 1
 script = SubResource( 4 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="HelpButton" type="Button" parent="VBoxContainer/MainButtons" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HelpButton" type="Button" parent="VBoxContainer/MainButtons"]
 margin_left = 578.0
 margin_right = 620.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Call up the help page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Help"
-flat = false
-align = 1
 script = SubResource( 5 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="Label" type="Label" parent="VBoxContainer/MainButtons" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/MainButtons"]
 margin_left = 624.0
 margin_top = 3.0
 margin_right = 624.0
 margin_bottom = 17.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer"]
 margin_top = 79.0
 margin_right = 1024.0
 margin_bottom = 83.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 87.0
 margin_right = 1024.0
 margin_bottom = 111.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="NameLabel" type="Label" parent="VBoxContainer/HBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="NameLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_top = 5.0
 margin_right = 38.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Name"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Hint" ]
 
-[node name="NameLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="NameLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_left = 42.0
 margin_right = 100.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "This game's version"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="VersionLabel" type="Label" parent="VBoxContainer/HBoxContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VersionLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 104.0
 margin_top = 5.0
 margin_right = 152.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Version"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Hint" ]
 
-[node name="VersionLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="VersionLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_left = 156.0
 margin_right = 214.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "This game's version"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="UrlLabel" type="Label" parent="VBoxContainer/HBoxContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="UrlLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 218.0
 margin_top = 5.0
 margin_right = 243.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "URL"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="UrlLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="UrlLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_left = 247.0
 margin_right = 305.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 
-[node name="AuthorLabel" type="Label" parent="VBoxContainer/HBoxContainer" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="AuthorLabel" type="Label" parent="VBoxContainer/HBoxContainer"]
 margin_left = 309.0
 margin_top = 5.0
 margin_right = 352.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Author"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Hint" ]
 
-[node name="AuthorLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="AuthorLineEdit" type="LineEdit" parent="VBoxContainer/HBoxContainer"]
 margin_left = 356.0
 margin_right = 414.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "This game's version"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="SceneNumber" type="HBoxContainer" parent="VBoxContainer" index="3"]
-
-editor/display_folded = true
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SceneNumber" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 115.0
 margin_right = 1024.0
 margin_bottom = 139.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Dialog scene controls"
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="Label" type="Label" parent="VBoxContainer/SceneNumber" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/SceneNumber"]
 margin_top = 5.0
 margin_right = 153.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Current Scene Number: "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CurrentSceneNumber" type="SpinBox" parent="VBoxContainer/SceneNumber" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CurrentSceneNumber" type="SpinBox" parent="VBoxContainer/SceneNumber"]
 margin_left = 157.0
 margin_right = 231.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 min_value = 1.0
 max_value = 30.0
-step = 1.0
-page = 0.0
 value = 1.0
-exp_edit = false
 rounded = true
-editable = true
-prefix = ""
-suffix = ""
 script = SubResource( 6 )
 
-[node name="MaxLabel" type="Label" parent="VBoxContainer/SceneNumber" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MaxLabel" type="Label" parent="VBoxContainer/SceneNumber"]
 margin_left = 235.0
 margin_top = 5.0
 margin_right = 274.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Number of dialogue scenes in this game"
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Of: 30"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Anchor", "Hint" ]
 
-[node name="HSlider" type="HSlider" parent="VBoxContainer/SceneNumber" index="3"]
-
+[node name="HSlider" type="HSlider" parent="VBoxContainer/SceneNumber"]
 visible = false
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
 margin_left = 278.0
 margin_right = 294.0
 margin_bottom = 16.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
 min_value = 1.0
 max_value = 1.0
-step = 1.0
-page = 0.0
 value = 1.0
-exp_edit = false
-rounded = false
-editable = true
 tick_count = 20
-ticks_on_borders = false
-focus_mode = 2
 script = SubResource( 7 )
 
-[node name="PrevButton" type="Button" parent="VBoxContainer/SceneNumber" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PrevButton" type="Button" parent="VBoxContainer/SceneNumber"]
 margin_left = 278.0
 margin_right = 318.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Edit previous dialogue"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Prev"
-flat = false
-align = 1
 script = SubResource( 8 )
-_sections_unfolded = [ "Focus", "Hint" ]
 
-[node name="ButtonNext" type="Button" parent="VBoxContainer/SceneNumber" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonNext" type="Button" parent="VBoxContainer/SceneNumber"]
 margin_left = 322.0
 margin_right = 364.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Edit next dialogue"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Next"
-flat = false
-align = 1
 script = SubResource( 9 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="NewButton" type="Button" parent="VBoxContainer/SceneNumber" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="NewButton" type="Button" parent="VBoxContainer/SceneNumber"]
 margin_left = 368.0
 margin_right = 408.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Insert blank dialogue at current page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "New"
-flat = false
-align = 1
 script = SubResource( 10 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="DeleteButton" type="Button" parent="VBoxContainer/SceneNumber" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="DeleteButton" type="Button" parent="VBoxContainer/SceneNumber"]
 margin_left = 412.0
 margin_right = 467.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Delete this dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete"
-flat = false
-align = 1
 script = SubResource( 11 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="CopyButton" type="Button" parent="VBoxContainer/SceneNumber" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CopyButton" type="Button" parent="VBoxContainer/SceneNumber"]
 margin_left = 471.0
 margin_right = 514.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Insert new dialogue based on current dialogue"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Copy"
-flat = false
-align = 1
 script = SubResource( 12 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer"]
 margin_top = 143.0
 margin_right = 1024.0
 margin_bottom = 147.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Anchor", "Grow Direction", "Margin", "Rect" ]
 
-[node name="DataEditor" type="VBoxContainer" parent="VBoxContainer" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="DataEditor" type="VBoxContainer" parent="VBoxContainer"]
 margin_top = 151.0
 margin_right = 1024.0
 margin_bottom = 455.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="TextData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_right = 1024.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
-_sections_unfolded = [ "Anchor" ]
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/TextData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/TextData"]
 margin_top = 5.0
 margin_right = 27.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Text"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/TextData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/TextData"]
 margin_left = 31.0
 margin_right = 119.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use text in current dialogue"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
 script = SubResource( 13 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/DataEditor/TextData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/DataEditor/TextData"]
 margin_left = 123.0
 margin_right = 623.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 500, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Text to display in current dialogue page"
-focus_mode = 2
-mouse_filter = 0
 mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 text = "Godot VN Demo, press the >>> button at the right bottom to proceed."
-readonly = false
-highlight_current_line = false
-syntax_highlighting = false
-show_line_numbers = false
-highlight_all_occurrences = false
 override_selected_font_color = true
-context_menu_enabled = true
-smooth_scrolling = false
-v_scroll_speed = 80.0
-hiding_enabled = 0
-wrap_lines = true
-caret_block_mode = false
 caret_blink = true
-caret_blink_speed = 0.65
-caret_moving_by_right_click = true
 script = SubResource( 14 )
-_sections_unfolded = [ "Anchor", "Caret", "Grow Direction", "Hint", "Rect" ]
 
-[node name="BackgroundImageData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="BackgroundImageData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 28.0
 margin_right = 1024.0
 margin_bottom = 52.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/BackgroundImageData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/BackgroundImageData"]
 margin_top = 5.0
 margin_right = 118.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Background Image"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/BackgroundImageData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/BackgroundImageData"]
 margin_left = 122.0
 margin_right = 210.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use background image in current dialgue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/BackgroundImageData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/BackgroundImageData"]
 margin_left = 214.0
 margin_right = 514.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 300, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "File to use in current dialogue page"
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "dialogue/images/default_background.png"
 script = SubResource( 15 )
-_sections_unfolded = [ "Hint", "Rect" ]
 
-[node name="Button" type="Button" parent="VBoxContainer/DataEditor/BackgroundImageData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button" type="Button" parent="VBoxContainer/DataEditor/BackgroundImageData"]
 margin_left = 518.0
 margin_right = 604.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Preview the currently used dialogue background image"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "View Image"
-flat = false
-align = 1
 script = SubResource( 16 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="BackgroundSoundData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="BackgroundSoundData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 56.0
 margin_right = 1024.0
 margin_bottom = 80.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/BackgroundSoundData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/BackgroundSoundData"]
 margin_top = 5.0
 margin_right = 117.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Background Sound"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/BackgroundSoundData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/BackgroundSoundData"]
 margin_left = 121.0
 margin_right = 209.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use background sound in current dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/BackgroundSoundData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/BackgroundSoundData"]
 margin_left = 213.0
 margin_right = 513.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 300, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Sound to use on current dialogue page"
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "dialogue/sounds/volumeTest.ogg"
 script = SubResource( 17 )
-_sections_unfolded = [ "Grow Direction", "Hint", "Rect" ]
 
-[node name="Button" type="Button" parent="VBoxContainer/DataEditor/BackgroundSoundData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button" type="Button" parent="VBoxContainer/DataEditor/BackgroundSoundData"]
 margin_left = 517.0
 margin_right = 598.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Play currently used sound"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Play Sound"
-flat = false
-align = 1
 script = SubResource( 18 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="DialogueSoundData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="DialogueSoundData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 84.0
 margin_right = 1024.0
 margin_bottom = 108.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/DialogueSoundData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/DialogueSoundData"]
 margin_top = 5.0
 margin_right = 115.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Dialogue Sound    "
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/DialogueSoundData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/DialogueSoundData"]
 margin_left = 119.0
 margin_right = 207.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use dialogue sound on current dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/DialogueSoundData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/DialogueSoundData"]
 margin_left = 211.0
 margin_right = 511.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 300, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Sound file to use for current dialgue sound on dialgue page"
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "Pick Sound"
 script = SubResource( 19 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect" ]
 
-[node name="Button" type="Button" parent="VBoxContainer/DataEditor/DialogueSoundData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Button" type="Button" parent="VBoxContainer/DataEditor/DialogueSoundData"]
 margin_left = 515.0
 margin_right = 596.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Play sound"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Play Sound"
-flat = false
-align = 1
 script = SubResource( 20 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="FontData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="FontData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 112.0
 margin_right = 1024.0
 margin_bottom = 136.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/FontData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/FontData"]
 margin_top = 5.0
 margin_right = 28.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Font"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/FontData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/FontData"]
 margin_left = 32.0
 margin_right = 120.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use a custom font on this dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/FontData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/FontData"]
 margin_left = 124.0
 margin_right = 424.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 300, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Font file to use on current dialgue page"
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "dialogue/font.ttf"
 script = SubResource( 21 )
-_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Rect" ]
 
-[node name="PreviewLabel" type="Label" parent="VBoxContainer/DataEditor/FontData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="PreviewLabel" type="Label" parent="VBoxContainer/DataEditor/FontData"]
 margin_left = 428.0
 margin_top = 11.0
 margin_right = 435.0
-margin_bottom = 13.0
-rect_pivot_offset = Vector2( 0, 0 )
+margin_bottom = 12.0
 hint_tooltip = "Preview of the font to be used"
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 theme = SubResource( 23 )
 text = "Preview"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Hint" ]
 
-[node name="SizeData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SizeData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 140.0
 margin_right = 1024.0
 margin_bottom = 164.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/SizeData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/SizeData"]
 margin_top = 5.0
 margin_right = 57.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Text Size"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/SizeData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/SizeData"]
 margin_left = 61.0
 margin_right = 149.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use custom text size on this dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="SpinBox" type="SpinBox" parent="VBoxContainer/DataEditor/SizeData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpinBox" type="SpinBox" parent="VBoxContainer/DataEditor/SizeData"]
 margin_left = 153.0
 margin_right = 227.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Size of the currently used dialogue page text"
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 min_value = 1.0
-max_value = 100.0
-step = 1.0
-page = 0.0
 value = 64.0
-exp_edit = false
 rounded = true
-editable = true
-prefix = ""
-suffix = ""
-_sections_unfolded = [ "Focus", "Hint" ]
 
-[node name="ColorData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 168.0
 margin_right = 1024.0
 margin_bottom = 192.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/ColorData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/ColorData"]
 margin_top = 5.0
 margin_right = 65.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Font Color"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/ColorData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/ColorData"]
 margin_left = 69.0
 margin_right = 157.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use custom text color on this dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
 script = SubResource( 24 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/DataEditor/ColorData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/DataEditor/ColorData"]
 margin_left = 161.0
 margin_right = 241.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 80, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Set the color values with numbers"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
 text = "#ff0000"
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 script = SubResource( 25 )
-_sections_unfolded = [ "Grow Direction", "Hint", "Margin", "Rect" ]
 
-[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/DataEditor/ColorData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/DataEditor/ColorData"]
 margin_left = 245.0
 margin_right = 320.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Pick a color for text"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Pick Color"
-flat = false
-align = 1
 color = Color( 1, 0, 0, 1 )
-edit_alpha = true
 script = SubResource( 26 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="ItemsData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ItemsData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 196.0
 margin_right = 1024.0
 margin_bottom = 220.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/ItemsData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_top = 5.0
 margin_right = 38.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Items"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/ItemsData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 42.0
 margin_right = 130.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use custom items on this dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
 script = SubResource( 27 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="ItemList" type="ItemList" parent="VBoxContainer/DataEditor/ItemsData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ItemList" type="ItemList" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 134.0
 margin_right = 254.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 120, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
 hint_tooltip = "List of items used on this page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-items = [  ]
-select_mode = 0
-icon_mode = 1
-fixed_icon_size = Vector2( 0, 0 )
 script = SubResource( 28 )
-_sections_unfolded = [ "Grow Direction", "Hint", "Margin", "Rect" ]
 
-[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/ItemsData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 258.0
 margin_right = 384.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Click to select image file for currently selected item"
-mouse_filter = 0
-mouse_default_cursor_shape = 2
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 0
-shortcut = null
-group = null
 text = "Select Item Texture"
 script = SubResource( 29 )
-_sections_unfolded = [ "Focus", "Hint" ]
 
-[node name="SpinBoxX" type="SpinBox" parent="VBoxContainer/DataEditor/ItemsData" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpinBoxX" type="SpinBox" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 388.0
 margin_right = 462.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Left offset for currently selected item"
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
 max_value = 10000.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
-_sections_unfolded = [ "Hint" ]
 
-[node name="SpinBoxY" type="SpinBox" parent="VBoxContainer/DataEditor/ItemsData" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SpinBoxY" type="SpinBox" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 466.0
 margin_right = 540.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Left offset for currently selected item"
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-min_value = 0.0
 max_value = 10000.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-prefix = ""
-suffix = ""
-_sections_unfolded = [ "Hint" ]
 
-[node name="ButtonAdd" type="Button" parent="VBoxContainer/DataEditor/ItemsData" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonAdd" type="Button" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 544.0
 margin_right = 616.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Add a new item"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add Item"
-flat = false
-align = 1
 script = SubResource( 30 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="ButtonDelete" type="Button" parent="VBoxContainer/DataEditor/ItemsData" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonDelete" type="Button" parent="VBoxContainer/DataEditor/ItemsData"]
 margin_left = 620.0
 margin_right = 710.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Delete currently selected item"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete Item"
-flat = false
-align = 1
 script = SubResource( 31 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="ChoicesData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ChoicesData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 224.0
 margin_right = 1024.0
 margin_bottom = 248.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/ChoicesData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_top = 5.0
 margin_right = 50.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Choices"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/ChoicesData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_left = 54.0
 margin_right = 142.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Use custom choices on this dialogue page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
 script = SubResource( 32 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="ItemList" type="ItemList" parent="VBoxContainer/DataEditor/ChoicesData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ItemList" type="ItemList" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_left = 146.0
 margin_right = 266.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 120, 12 )
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = true
 hint_tooltip = "List of choices on this page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-items = [  ]
-select_mode = 0
-icon_mode = 1
-fixed_icon_size = Vector2( 0, 0 )
 script = SubResource( 33 )
-_sections_unfolded = [ "Anchor", "Columns", "Grow Direction", "Hint", "Icon", "Margin", "Rect" ]
 
-[node name="LineEditGoto" type="LineEdit" parent="VBoxContainer/DataEditor/ChoicesData" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LineEditGoto" type="LineEdit" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_left = 270.0
 margin_right = 328.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Set this field to make the currently selected choice go to corresponding id"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="LineEditText" type="LineEdit" parent="VBoxContainer/DataEditor/ChoicesData" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LineEditText" type="LineEdit" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_left = 332.0
 margin_right = 390.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Set this to the text the currenly selcted item displays"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
-_sections_unfolded = [ "Hint" ]
 
-[node name="ButtonAddChoice" type="Button" parent="VBoxContainer/DataEditor/ChoicesData" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonAddChoice" type="Button" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_left = 394.0
 margin_right = 478.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Add a new choice"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Add Choice"
-flat = false
-align = 1
 script = SubResource( 34 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="ButtonDeleteChoice2" type="Button" parent="VBoxContainer/DataEditor/ChoicesData" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonDeleteChoice2" type="Button" parent="VBoxContainer/DataEditor/ChoicesData"]
 margin_left = 482.0
 margin_right = 584.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Delete currently selected choice"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Delete Choice"
-flat = false
-align = 1
 script = SubResource( 35 )
-_sections_unfolded = [ "Focus", "Hint" ]
 
-[node name="GotoData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="9"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GotoData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 252.0
 margin_right = 1024.0
 margin_bottom = 276.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/GotoData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/GotoData"]
 margin_top = 5.0
 margin_right = 31.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Goto"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/GotoData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/GotoData"]
 margin_left = 35.0
 margin_right = 123.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
 script = SubResource( 36 )
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/DataEditor/GotoData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/DataEditor/GotoData"]
 margin_left = 127.0
 margin_right = 185.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Set this to make the next button to go to corresponding id page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 script = SubResource( 37 )
-_sections_unfolded = [ "Hint" ]
 
-[node name="IDData" type="HBoxContainer" parent="VBoxContainer/DataEditor" index="10"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="IDData" type="HBoxContainer" parent="VBoxContainer/DataEditor"]
 margin_top = 280.0
 margin_right = 1024.0
 margin_bottom = 304.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-alignment = 0
 
-[node name="Label" type="Label" parent="VBoxContainer/DataEditor/IDData" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Label" type="Label" parent="VBoxContainer/DataEditor/IDData"]
 margin_top = 5.0
 margin_right = 15.0
 margin_bottom = 19.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "ID"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/IDData" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CheckBox" type="CheckBox" parent="VBoxContainer/DataEditor/IDData"]
 margin_left = 19.0
 margin_right = 107.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = true
 pressed = true
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Activated"
-flat = false
-align = 0
 script = SubResource( 38 )
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/DataEditor/IDData" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/DataEditor/IDData"]
 margin_left = 111.0
 margin_right = 169.0
 margin_bottom = 24.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "The id of this page"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 1
-size_flags_horizontal = 1
-size_flags_vertical = 1
-focus_mode = 2
-context_menu_enabled = true
-placeholder_alpha = 0.6
-caret_blink = false
-caret_blink_speed = 0.65
-caret_position = 0
 script = SubResource( 39 )
-_sections_unfolded = [ "Hint" ]
-
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/NameLineEdit" to="." method="_on_NameLineEdit_text_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/VersionLineEdit" to="." method="_on_VersionLineEdit_text_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/UrlLineEdit" to="." method="_on_UrlLineEdit_text_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/HBoxContainer/AuthorLineEdit" to="." method="_on_AuthorLineEdit_text_changed"]
-
 [connection signal="value_changed" from="VBoxContainer/SceneNumber/CurrentSceneNumber" to="." method="_on_CurrentSceneNumber_value_changed"]
-
 [connection signal="changed" from="VBoxContainer/SceneNumber/HSlider" to="." method="_on_HSlider_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/DataEditor/TextData/TextEdit" to="." method="_on_TextData_TextEdit_text_changed"]
-
 [connection signal="value_changed" from="VBoxContainer/DataEditor/SizeData/SpinBox" to="." method="_on_SpinBox_value_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/DataEditor/ColorData/LineEdit" to="." method="_on_ColorData_LineEdit_text_changed"]
-
 [connection signal="item_activated" from="VBoxContainer/DataEditor/ItemsData/ItemList" to="." method="_on_ItemsData_ItemList_item_activated"]
-
 [connection signal="value_changed" from="VBoxContainer/DataEditor/ItemsData/SpinBoxX" to="." method="_on_SpinBoxX_value_changed"]
-
 [connection signal="value_changed" from="VBoxContainer/DataEditor/ItemsData/SpinBoxY" to="." method="_on_SpinBoxY_value_changed"]
-
 [connection signal="item_activated" from="VBoxContainer/DataEditor/ChoicesData/ItemList" to="." method="_on_ChoicesData_ItemList_item_activated"]
-
 [connection signal="text_entered" from="VBoxContainer/DataEditor/ChoicesData/LineEditGoto" to="." method="_on_ChoicesData_LineEditGoto_text_changed"]
-
 [connection signal="text_entered" from="VBoxContainer/DataEditor/ChoicesData/LineEditText" to="." method="_on_ChoicesData_LineEditText_text_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/DataEditor/GotoData/LineEdit" to="." method="_on_GotoData_LineEdit_text_changed"]
-
 [connection signal="text_changed" from="VBoxContainer/DataEditor/IDData/LineEdit" to="." method="_on_IDData_LineEdit_text_changed"]
-
-

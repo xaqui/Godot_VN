@@ -3,20 +3,21 @@
 importer="texture"
 type="StreamTexture"
 path="res://.import/default_background2.png-6bf1f62392eff1c78f960a6376f1f9ce.stex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
 source_file="res://dialogue/images/default_background2.png"
-source_md5="01905d5d29c59c283bee736008f16208"
-
 dest_files=[ "res://.import/default_background2.png-6bf1f62392eff1c78f960a6376f1f9ce.stex" ]
-dest_md5="1a8c30a6eadb1c858c90c87a0362c68e"
 
 [params]
 
 compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
+compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
 flags/filter=true
@@ -26,6 +27,7 @@ flags/srgb=2
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/HDR_as_SRGB=false
+process/invert_color=false
 stream=false
 size_limit=0
 detect_3d=true

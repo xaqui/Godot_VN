@@ -1,48 +1,33 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://menu/menu_background.tex" type="Texture" id=2]
 [ext_resource path="res://menu/MenuSound.ogg" type="AudioStream" id=3]
+[ext_resource path="res://dialogue/font.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFontData" id=1]
-
-font_path = ""
-
-[sub_resource type="DynamicFontData" id=2]
-
-font_path = "res://dialogue/font.ttf"
-
-[sub_resource type="DynamicFont" id=3]
-
+[sub_resource type="DynamicFont" id=9]
 size = 64
-use_mipmaps = false
-use_filter = false
-font_data = SubResource( 2 )
-fallback/0 = SubResource( 1 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Resource", "Settings" ]
-
-[sub_resource type="GDScript" id=8]
-
-script/source = "extends Button
-
-func pressed ():
-	get_node (\"/root/dialogue_loader\").page = 0
-	get_tree ().change_scene (\"dialogue/dialogue.tscn\")
-"
+font_data = ExtResource( 4 )
 
 [sub_resource type="GDScript" id=4]
+script/source = "extends Button
 
+func _pressed ():
+	get_node (\"/root/dialogue_loader\").page = 0
+	get_tree ().change_scene (\"res://dialogue/dialogue.tscn\")
+"
+
+[sub_resource type="GDScript" id=5]
 script/source = "extends Button
 
 func _ready():
 	pass
 "
 
-[sub_resource type="GDScript" id=5]
-
+[sub_resource type="GDScript" id=6]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	var l = Label.new ()
 	var f = File.new ()
 	f.open (\"res://menu/about.txt\", File.READ)
@@ -55,16 +40,14 @@ func pressed ():
 	p.popup_centered (Vector2 (0, 0))
 "
 
-[sub_resource type="GDScript" id=6]
-
+[sub_resource type="GDScript" id=7]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_tree ().change_scene (\"dialogue/dialogue_editor.tscn\")
 "
 
-[sub_resource type="GDScript" id=7]
-
+[sub_resource type="GDScript" id=8]
 script/source = "extends Button
 
 func _pressed ():
@@ -73,238 +56,86 @@ func _pressed ():
 "
 
 [node name="Main_Panel" type="Panel"]
-
-anchor_left = 0.0
-anchor_top = 0.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Hint", "Rect" ]
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="TextureRect" type="TextureRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="TextureRect" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
-_sections_unfolded = [ "Anchor", "Grow Direction", "Hint", "Margin", "Size Flags" ]
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="LabelTilte" type="Label" parent="VBoxContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="LabelTilte" type="Label" parent="VBoxContainer"]
 margin_top = 198.0
 margin_right = 1024.0
 margin_bottom = 282.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 9 )
 text = "Godot VN"
 align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Theme", "custom_fonts", "custom_styles" ]
 
-[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
 margin_top = 286.0
 margin_right = 1024.0
 margin_bottom = 402.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-use_top_left = false
 
-[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/CenterContainer"]
 margin_left = 471.0
 margin_right = 553.0
 margin_bottom = 116.0
-rect_pivot_offset = Vector2( 0, 0 )
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-columns = 1
-_sections_unfolded = [ "Anchor", "Margin" ]
 
-[node name="ButtonNewGame" type="Button" parent="VBoxContainer/CenterContainer/GridContainer" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonNewGame" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_right = 82.0
 margin_bottom = 20.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Start new game"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "New Game"
-flat = false
-align = 1
-script = SubResource( 8 )
-_sections_unfolded = [ "Hint" ]
+script = SubResource( 4 )
 
-[node name="ButtonLoad" type="Button" parent="VBoxContainer/CenterContainer/GridContainer" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonLoad" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 24.0
 margin_right = 82.0
 margin_bottom = 44.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Load a saved game"
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 disabled = true
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Load"
-flat = false
-align = 1
-script = SubResource( 4 )
-_sections_unfolded = [ "Hint" ]
+script = SubResource( 5 )
 
-[node name="ButtonAbout" type="Button" parent="VBoxContainer/CenterContainer/GridContainer" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonAbout" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 48.0
 margin_right = 82.0
 margin_bottom = 68.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "About this game"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "About"
-flat = false
-align = 1
-script = SubResource( 5 )
-_sections_unfolded = [ "Hint" ]
+script = SubResource( 6 )
 
-[node name="ButtonEditor" type="Button" parent="VBoxContainer/CenterContainer/GridContainer" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonEditor" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 72.0
 margin_right = 82.0
 margin_bottom = 92.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Start the builtin editor"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Editor"
-flat = false
-align = 1
-script = SubResource( 6 )
-_sections_unfolded = [ "Hint" ]
+script = SubResource( 7 )
 
-[node name="ButtonExit" type="Button" parent="VBoxContainer/CenterContainer/GridContainer" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ButtonExit" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 96.0
 margin_right = 82.0
 margin_bottom = 116.0
-rect_pivot_offset = Vector2( 0, 0 )
 hint_tooltip = "Exit this game to desktop"
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
 text = "Quit"
-flat = false
-align = 1
-script = SubResource( 7 )
-_sections_unfolded = [ "Focus", "Hint" ]
+script = SubResource( 8 )
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
-
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = 0.0
 autoplay = true
-mix_target = 0
-bus = "Master"
-
-
