@@ -10,7 +10,8 @@ func _pressed ():
 	for i in get_node(\"/root/Control\").nextActions:
 		InputMap.action_add_event (\"next\", i)
 	get_node (\"/root/Control/Panel\").show ()
-	get_node (\"/root/Control/Menu\").hide ()"
+	get_node (\"/root/Control/Menu\").hide ()
+"
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
@@ -109,14 +110,16 @@ script/source = "extends TextureRect
 script/source = "extends Button
 
 func _pressed ():
-	get_parent ().get_parent ().next ()"
+	get_parent ().get_parent ().next ()
+"
 
 [sub_resource type="GDScript" id=10]
 script/source = "extends Button
 
 func _pressed ():
 	get_parent ().get_parent ().prev ()
-	"
+	
+"
 
 [sub_resource type="GDScript" id=11]
 script/source = "extends VBoxContainer
@@ -208,6 +211,9 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 script = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LabelDialog" type="Label" parent="Panel"]
 anchor_top = 1.0

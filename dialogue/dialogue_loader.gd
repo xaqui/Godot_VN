@@ -115,7 +115,7 @@ func get_dialogue_data (parser):
 				e = parser.read ()
 			if parser.get_node_type () == XMLParser.NODE_TEXT and not d.has ("t") and parser.get_node_data () != "": #
 				d["t"] = parser.get_node_data ().xml_unescape ()
-			data.append (d)
+			e = parser.read ()
 			while parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "choice":
 				if parser.has_attribute ("goto"):
 					y = parser.get_named_attribute_value ("goto")
@@ -130,7 +130,7 @@ func get_dialogue_data (parser):
 				if z:
 					x.append ([y, z])
 			if x != []:
-				d["x"] = x
+				d["x"] = x				
 			if parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "items":
 				i = []
 				e = parser.read ()
@@ -154,6 +154,7 @@ func get_dialogue_data (parser):
 					while parser.get_node_type () == XMLParser.NODE_TEXT and indentFilter.search (parser.get_node_data ()).get_string () == parser.get_node_data (): #
 						e = parser.read ()
 				d["i"] = i
+			data.append (d)
 	return [meta, a, data]
 
 func dump_data (datafile, data):

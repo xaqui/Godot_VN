@@ -120,8 +120,7 @@ func go_to_page (i):
 			InputMap.action_add_event ("next", i)
 
 func add_item (img, posX, posY):
-	var r = ImageTexture.new ()
-	r.load (img)
+	var r = load(img)
 	var t = TextureRect.new ()
 	t.set_texture (r)
 	BackgroundImage.add_child (t)
