@@ -86,7 +86,7 @@ func go_to_page (i):
 	if x.has ("t"):
 		LabelDialog.set_text (x["t"])
 	if x.has ("f"):
-		d.set_font_path (x["f"])
+		d.set_font_path ("res://" + x["f"])
 		f.set_font_data (d)
 		LabelDialog.get_theme ().set_default_font (f)
 	if x.has ("c"):
@@ -227,7 +227,7 @@ func _ready ():
 	ButtonPrev = get_node ("Panel/ButtonPrev")
 	var t = Theme.new ()
 	var d = DynamicFontData.new ()
-	d.set_font_path ("dialogue/fonts/font.ttf") # Need to override the bitmap font with a vector font
+	d.set_font_path ("res://dialogue/fonts/font.ttf") # Need to override the bitmap font with a vector font
 	var f = DynamicFont.new ()
 	f.set_font_data (d)
 	f.set_size (12)
@@ -235,7 +235,7 @@ func _ready ():
 	LabelDialog.set_theme (t)
 	LabelDialog.set_margin (MARGIN_BOTTOM, text_margin)
 	var parser = XMLParser.new ()
-	if parser.open ("dialogue/data.xml") != 0:
+	if parser.open ("res://dialogue/data.xml") != 0:
 		print ("Error Opening: ", "dialogue/data.xml")
 		return null
 	data = get_node ("/root/dialogue_loader").get_dialogue_data (parser)
