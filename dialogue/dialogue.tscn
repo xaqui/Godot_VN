@@ -19,17 +19,27 @@ script/source = "extends Button
 func _pressed ():
 	get_node (\"/root/Control\").p = PopupPanel.new ()
 	var i = ItemList.new ()
+	var saves = get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir())
+	var savedata = \"\"
+
 	i.set_custom_minimum_size (Vector2 (100, 100))
-	i.add_item (\"New Save\")
-	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_user_data_dir ())):
-		i.add_item (x[0])
+	#i.add_item (\"New Save\")
+	#for x in get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir()):
+	#	i.add_item (x)
+	for j in range(20):
+		if (saves != []):
+			if (saves[j] != \"\"):
+				savedata = \"(*)\"
+		i.add_item(\"Slot \"+String(j)+savedata)
+		savedata = \"\"
+	
 	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_SaveList_ItemList_item_activated\")
 	var v = VBoxContainer.new ()
 	var h = HBoxContainer.new ()
 	var b = Button.new ()
 	b.set_text (\"OK\")
 	var s = GDScript.new ()
-	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tif get_parent ().get_parent ().get_child (0).get_selected_items ().size () == 1:\\n\\t\\tget_node (\\\"/root/Control\\\")._on_LoadList_ItemList_item_activated (get_parent ().get_parent ().get_child (0).get_selected_items ()[0])\")
+	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tif get_parent ().get_parent ().get_child (0).get_selected_items ().size () == 1:\\n\\t\\tget_node (\\\"/root/Control\\\")._on_SaveList_ItemList_item_activated (get_parent ().get_parent ().get_child (0).get_selected_items ()[0])\\n\\tget_parent ().get_parent ().get_parent ().queue_free ()\")
 	s.reload ()
 	b.set_script (s)
 	h.add_child (b)
@@ -54,7 +64,7 @@ func _pressed ():
 	get_node (\"/root/Control\").p = PopupPanel.new ()
 	var i = ItemList.new ()
 	i.set_custom_minimum_size (Vector2 (100, 100))
-	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_user_data_dir ())):
+	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_executable_path().get_base_dir())):
 		i.add_item (x[0])
 	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_LoadList_ItemList_item_activated\")
 	var v = VBoxContainer.new ()
