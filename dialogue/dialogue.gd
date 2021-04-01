@@ -273,8 +273,8 @@ func get_saves(path):
 						print("Save file "+file+" found.")
 						saves[int(file.lstrip("slot_").rstrip(".sav"))] = file
 						f.close()
-		else:
-			print("Saves directory is empty.")
+		#else:
+			#print("Saves directory is empty.")
 	else:
 		print("Saves directory does not exist, creating...")
 		dir.open(path)
@@ -283,7 +283,6 @@ func get_saves(path):
 
 func save_game(idx):
 	var f = File.new()
-	var gamename = get_node ("/root/dialogue_loader").game_name
 	var time = OS.get_datetime()
 	var nameweekday= ["Sun", "Mon", "Tue", "W", "Thu", "Fri", "Sat"]
 	var namemonth= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
@@ -300,29 +299,59 @@ func save_game(idx):
 		print("Couldn't open save file in slot "+idx)
 		return false
 	else:
-		f.store_line ("; Godot vn save file, do not edit by hand.")
-		f.store_line (";"+get_node ("/root/dialogue_loader").game_name)
-		f.store_line (";"+date)
-#		f.store_line (";")
-		f.store_line (";"+String (get_node ("/root/dialogue_loader").page))
+		f.store_line ("Godot vn save file, do not edit by hand.")
+		f.store_line (get_node ("/root/dialogue_loader").game_name)
+		f.store_line ("date:"+date)
+		f.store_line ("xml file")
+		f.store_line ("page:"+String (get_node ("/root/dialogue_loader").page))
+		f.store_line("choices_history:")
+		for choice in choicesHistory:
+			f.store_string(str(choicesHistory[choice-1]))
+			f.store_string(',')
+		f.store_line ("")
 		f.close ()
-		popup("Saved game in slot "+String(idx)+"!")
 		return true
 
-			
-#func save_game (file, idx):
-#	print("not implemented")
 	
-func load_game (file, idx):
-	print("not implemented")
+func load_game (idx):
+	var f = File.new()
+	var s = get_saves (DirPath)
+	var line
+	var page = -1
+	if s == null or idx >= s.size ():
+		return false
+		
+	if (f.open (DirPath+"/saves/"+"slot_"+str(idx)+".sav", File.READ) != OK):
+		print("Couldn't read save file "+"slot_"+str(idx)+".sav")
+	else:
+		while not f.eof_reached():
+			line = f.get_line()
+			if line.begins_with("page:"):
+				page = int(line.lstrip("page:"))
+		f.close()
+		if (page < 0):
+			print("Load game failed - save file doesn't contain saved page!")
+			return false
+	get_node ("/root/dialogue_loader").page = page
+	prev () # Reload items that may not be specified on current page
+	next ()
+	return true
 
 func _on_SaveList_ItemList_item_activated (idx):
 	save_game (idx)
 	get_node ("Menu").hide ()
 	get_node ("Panel").show ()
+	popup("Saved game in slot "+String(idx)+"!")
+	p.queue_free ()
 	
 func _on_LoadList_ItemList_item_activated (idx):
-	print("not implemented")
+	load_game (idx)
+	get_node ("Menu").hide ()
+	get_node ("Panel").show ()
+	popup("Loaded game from slot "+String(idx)+"!")
+	p.queue_free ()
+	#for i in nextActions:
+	#	InputMap.action_add_event ("next", i)
 	
 func popup(text):
 	var l = Label.new ()
