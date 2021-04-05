@@ -125,7 +125,7 @@ func get_dialogue_data (parser):
 					z = parser.get_node_data ()
 					e = parser.read ()
 					e = parser.read ()
-					while parser.get_node_type () == XMLParser.NODE_TEXT and indentFilter.search (parser.get_node_data ()).get_string () == parser.get_node_data (): #
+					while parser.get_node_type () == XMLParser.NODE_TEXT and parser.get_node_data ().strip_edges ().length () == 0: #
 						e = parser.read ()
 				if z:
 					x.append ([y, z])
