@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <meta author="Code_Man" name="Godot VN Demo" version="1.0" url="http://code_man.cybnet.ch"/>
 <scenes>
-  <scene_data background="dialogue/images/default_background.png" font="dialogue/font.ttf" color="#ff0000" size="64">Godot VN Demo, press the &gt;&gt;&gt; button at the right bottom to proceed.</scene_data>
+  <scene_data background="dialogue/images/default_background.png" font="dialogue/fonts/font.ttf" color="#ff0000" size="64">Godot VN Demo, press the &gt;&gt;&gt; button at the right bottom to proceed.</scene_data>
   <scene_data backgroundsound="dialogue/sounds/background_music.ogg" color="#aaaaaa" size="24">Welcome to the godot VN demonstration</scene_data>
   <scene_data>This will show you how to make visual novels in godot.</scene_data>
   <scene_data>Every page displays some content.</scene_data>
@@ -11,11 +11,9 @@
   <scene_data background="dialogue/images/default_background2.png">Background images and sounds will remain until changed on a new page.</scene_data>
   <scene_data>Text will be displayed per page once.</scene_data>
   <scene_data backgroundsound="" dialoguesound="dialogue/sounds/sound.ogg">Likewise a once to be played sound can be specified per page that will stop instantly on next page.</scene_data>
-  <scene_data backgroundsound="dialogue/sounds/background_music.ogg" background="dialogue/images/default_background.png" color="#0000ff" size="32">Custom fonts with color and size values can also be specified and will be in effect until changed.</scene_data>
-  <scene_data color="#aaaaaa" size="24" text="Image items may also be placed in the foreground at any spots.">
-    <items>
-      <item image="dialogue/images/item.png" x="100" y="100"/>
-      <item image="dialogue/images/item.png" x="400" y="500"/>
+  <scene_data font="dialogue/fonts/Stanberry.ttf" backgroundsound="dialogue/sounds/background_music.ogg" background="dialogue/images/default_background.png" color="#c4ffd4" size="32">Custom fonts with color and size values can also be specified and will be in effect until changed.</scene_data>
+  <scene_data font="dialogue/fonts/font.ttf" color="#aaaaaa" size="24" text="Image items may also be placed in the foreground at any spots.">
+    <items><item image="dialogue/images/item.png" x="100" y="100"/><item image="dialogue/images/item.png" x="400" y="500"/>
     </items>
   </scene_data>
   <scene_data>These will remain in effect until cleared either by a new possibly emtpy set.</scene_data>
@@ -23,8 +21,8 @@
     <items></items>
   </scene_data>
   <scene_data text="Choices may also be displayed to affect the game.">
-    <choice goto="a">Choose A</choice>
-    <choice goto="b">Choose B</choice></scene_data>
+    <choice goto="a">Choose A</choice><choice goto="b">Choose B</choice>
+  </scene_data>
   <scene_data id="a" goto="c">You have picked A.</scene_data>
   <scene_data id="b">You have picked B.</scene_data>
   <scene_data id="c">Choices can jump to a certain page.</scene_data>

@@ -10,7 +10,8 @@ func _pressed ():
 	for i in get_node(\"/root/Control\").nextActions:
 		InputMap.action_add_event (\"next\", i)
 	get_node (\"/root/Control/Panel\").show ()
-	get_node (\"/root/Control/Menu\").hide ()"
+	get_node (\"/root/Control/Menu\").hide ()
+"
 
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
@@ -18,17 +19,27 @@ script/source = "extends Button
 func _pressed ():
 	get_node (\"/root/Control\").p = PopupPanel.new ()
 	var i = ItemList.new ()
+	var saves = get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir())
+	var savedata = \"\"
+
 	i.set_custom_minimum_size (Vector2 (100, 100))
-	i.add_item (\"New Save\")
-	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_user_data_dir ())):
-		i.add_item (x[0])
+	#i.add_item (\"New Save\")
+	#for x in get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir()):
+	#	i.add_item (x)
+	for j in range(20):
+		if (saves != []):
+			if (saves[j] != \"\"):
+				savedata = \"(*)\"
+		i.add_item(\"Slot \"+String(j)+savedata)
+		savedata = \"\"
+	
 	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_SaveList_ItemList_item_activated\")
 	var v = VBoxContainer.new ()
 	var h = HBoxContainer.new ()
 	var b = Button.new ()
 	b.set_text (\"OK\")
 	var s = GDScript.new ()
-	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tif get_parent ().get_parent ().get_child (0).get_selected_items ().size () == 1:\\n\\t\\tget_node (\\\"/root/Control\\\")._on_LoadList_ItemList_item_activated (get_parent ().get_parent ().get_child (0).get_selected_items ()[0])\")
+	s.set_source_code (\"extends Button\\nfunc _pressed():\\n\\tget_node (\\\"/root/Control/Panel\\\").show ()\\n\\tget_node (\\\"/root/Control/Menu\\\").hide ()\\n\\tif get_parent ().get_parent ().get_child (0).get_selected_items ().size () == 1:\\n\\t\\tget_node (\\\"/root/Control\\\")._on_SaveList_ItemList_item_activated (get_parent ().get_parent ().get_child (0).get_selected_items ()[0])\")
 	s.reload ()
 	b.set_script (s)
 	h.add_child (b)
@@ -52,9 +63,17 @@ script/source = "extends Button
 func _pressed ():
 	get_node (\"/root/Control\").p = PopupPanel.new ()
 	var i = ItemList.new ()
+	var saves = get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir())
+	var savedata = \"\"
 	i.set_custom_minimum_size (Vector2 (100, 100))
-	for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_user_data_dir ())):
-		i.add_item (x[0])
+	#for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_executable_path().get_base_dir())):
+	#	i.add_item (x[0])
+	for j in range(20):
+		if (saves != []):
+			if (saves[j] != \"\"):
+				savedata = \"(*)\"
+		i.add_item(\"Slot \"+String(j)+savedata)
+		savedata = \"\"
 	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_LoadList_ItemList_item_activated\")
 	var v = VBoxContainer.new ()
 	var h = HBoxContainer.new ()
@@ -84,7 +103,9 @@ script/source = "extends Button
 
 func _pressed ():
 	if true:
-		get_tree ().change_scene (\"menu/menu.tscn\")
+		var err = get_tree ().change_scene (\"menu/menu.tscn\")
+		if err:
+			print(\"Can't change scene!\")
 	else:
 		get_node (\"/root/Control/Panel\").show ()
 		get_parent ().get_parent ().hide ()
@@ -109,14 +130,16 @@ script/source = "extends TextureRect
 script/source = "extends Button
 
 func _pressed ():
-	get_parent ().get_parent ().next ()"
+	get_parent ().get_parent ().next ()
+"
 
 [sub_resource type="GDScript" id=10]
 script/source = "extends Button
 
 func _pressed ():
 	get_parent ().get_parent ().prev ()
-	"
+	
+"
 
 [sub_resource type="GDScript" id=11]
 script/source = "extends VBoxContainer
@@ -208,6 +231,9 @@ texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 script = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="LabelDialog" type="Label" parent="Panel"]
 anchor_top = 1.0
@@ -221,6 +247,9 @@ custom_constants/shadow_offset_x = 2
 align = 1
 valign = 2
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonNext" type="Button" parent="Panel"]
 anchor_left = 1.0

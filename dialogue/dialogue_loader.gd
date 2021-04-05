@@ -7,7 +7,7 @@ var game_name = ""
 var game_version = ""
 var game_url = ""
 var game_author = ""
-var datafile = "dialogue/data.xml"
+#var datafile = "dialogue/data.xml"
 var page = 0
 var meta
 
@@ -35,13 +35,13 @@ func get_dialogue_meta_data (parser):
 func get_dialogue_data (parser):
 	var e = 0
 	var data = []
-	var background
-	var text
-	var backgroundsound
-	var dialoguesound
+	#var background
+	#var text
+	#var backgroundsound
+	#var dialoguesound
 	var c = 0
 	var a = {}
-	var goto
+	#var goto
 	var y
 	var id
 	var z
@@ -58,11 +58,11 @@ func get_dialogue_data (parser):
 		if parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "scene_data":
 			var i = null
 			var d = {}
-			dialoguesound = null
-			backgroundsound = null
-			background = null
+	#		dialoguesound = null
+	#		backgroundsound = null
+	#		background = null
 			c = c + 1
-			goto = null
+	#		goto = null
 			var x = []
 			if parser.has_attribute ("id"):
 				id = parser.get_named_attribute_value ("id")
@@ -115,7 +115,7 @@ func get_dialogue_data (parser):
 				e = parser.read ()
 			if parser.get_node_type () == XMLParser.NODE_TEXT and not d.has ("t") and parser.get_node_data () != "": #
 				d["t"] = parser.get_node_data ().xml_unescape ()
-			data.append (d)
+			e = parser.read ()
 			while parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "choice":
 				if parser.has_attribute ("goto"):
 					y = parser.get_named_attribute_value ("goto")
@@ -130,7 +130,7 @@ func get_dialogue_data (parser):
 				if z:
 					x.append ([y, z])
 			if x != []:
-				d["x"] = x
+				d["x"] = x				
 			if parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "items":
 				i = []
 				e = parser.read ()
@@ -154,6 +154,7 @@ func get_dialogue_data (parser):
 					while parser.get_node_type () == XMLParser.NODE_TEXT and indentFilter.search (parser.get_node_data ()).get_string () == parser.get_node_data (): #
 						e = parser.read ()
 				d["i"] = i
+			data.append (d)
 	return [meta, a, data]
 
 func dump_data (datafile, data):

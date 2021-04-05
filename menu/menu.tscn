@@ -3,28 +3,32 @@
 [ext_resource path="res://menu/menu.gd" type="Script" id=1]
 [ext_resource path="res://menu/menu_background.tex" type="Texture" id=2]
 [ext_resource path="res://menu/MenuSound.ogg" type="AudioStream" id=3]
-[ext_resource path="res://dialogue/font.ttf" type="DynamicFontData" id=4]
 
-[sub_resource type="DynamicFont" id=9]
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://dialogue/fonts/font.ttf"
+
+[sub_resource type="DynamicFont" id=2]
 size = 64
-font_data = ExtResource( 4 )
+font_data = SubResource( 1 )
 
-[sub_resource type="GDScript" id=4]
+[sub_resource type="GDScript" id=3]
 script/source = "extends Button
 
 func _pressed ():
 	get_node (\"/root/dialogue_loader\").page = 0
-	get_tree ().change_scene (\"res://dialogue/dialogue.tscn\")
+	var err = get_tree ().change_scene (\"dialogue/dialogue.tscn\")
+	if err:
+		print(\"Can't change scene!\")
 "
 
-[sub_resource type="GDScript" id=5]
+[sub_resource type="GDScript" id=4]
 script/source = "extends Button
 
 func _ready():
 	pass
 "
 
-[sub_resource type="GDScript" id=6]
+[sub_resource type="GDScript" id=5]
 script/source = "extends Button
 
 func _pressed ():
@@ -40,14 +44,16 @@ func _pressed ():
 	p.popup_centered (Vector2 (0, 0))
 "
 
-[sub_resource type="GDScript" id=7]
+[sub_resource type="GDScript" id=6]
 script/source = "extends Button
 
 func _pressed ():
-	get_tree ().change_scene (\"dialogue/dialogue_editor.tscn\")
+	var err = get_tree ().change_scene (\"dialogue/dialogue_editor.tscn\")
+	if err:
+		print(\"Can't change scene!\")
 "
 
-[sub_resource type="GDScript" id=8]
+[sub_resource type="GDScript" id=7]
 script/source = "extends Button
 
 func _pressed ():
@@ -69,6 +75,9 @@ anchor_bottom = 1.0
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
@@ -82,7 +91,7 @@ __meta__ = {
 margin_top = 198.0
 margin_right = 1024.0
 margin_bottom = 282.0
-custom_fonts/font = SubResource( 9 )
+custom_fonts/font = SubResource( 2 )
 text = "Godot VN"
 align = 1
 
@@ -101,7 +110,7 @@ margin_right = 82.0
 margin_bottom = 20.0
 hint_tooltip = "Start new game"
 text = "New Game"
-script = SubResource( 4 )
+script = SubResource( 3 )
 
 [node name="ButtonLoad" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 24.0
@@ -110,7 +119,7 @@ margin_bottom = 44.0
 hint_tooltip = "Load a saved game"
 disabled = true
 text = "Load"
-script = SubResource( 5 )
+script = SubResource( 4 )
 
 [node name="ButtonAbout" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 48.0
@@ -118,15 +127,16 @@ margin_right = 82.0
 margin_bottom = 68.0
 hint_tooltip = "About this game"
 text = "About"
-script = SubResource( 6 )
+script = SubResource( 5 )
 
 [node name="ButtonEditor" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 72.0
 margin_right = 82.0
 margin_bottom = 92.0
 hint_tooltip = "Start the builtin editor"
+disabled = true
 text = "Editor"
-script = SubResource( 7 )
+script = SubResource( 6 )
 
 [node name="ButtonExit" type="Button" parent="VBoxContainer/CenterContainer/GridContainer"]
 margin_top = 96.0
@@ -134,7 +144,7 @@ margin_right = 82.0
 margin_bottom = 116.0
 hint_tooltip = "Exit this game to desktop"
 text = "Quit"
-script = SubResource( 8 )
+script = SubResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )

@@ -14,52 +14,12 @@ var Forks
 var Last
 var choicesHistory = [] # This saves player choices for dialogue control
 var nextActions
+var DirPath
 
 var text_margin = -32 # Looks better if its not at the total bottom
 
 var p
 
-func get_saves (file):
-	var f = File.new ()
-	var s = []
-	if (f.open (file, File.READ) != OK):
-		print ("Error opening save file")
-		return []
-	f.get_line ()
-	print (f.get_line ())
-	while (not f.eof_reached ()):
-		s.append (f.get_csv_line ())
-	f.close ()
-	return s
-
-func load_game (file, idx):
-	var s = get_saves (file)
-	if s == null or idx >= s.size ():
-		return false
-	get_node ("/root/dialogue_loader").page = s[idx][0].to_int ()
-	prev () # Reload items that may not be specified on current page
-	next ()
-	return true
-	
-func save_game (file, idx):
-	var s = get_saves (file)
-	var f = File.new ()
-	if f.open (file, File.WRITE) != OK:
-		print ("Error opening file to save")
-		return false
-	f.store_line ("; Godot vn save file, do not edit by hand.\n")
-	f.store_string (get_node ("/root/dialogue_loader").game_name)
-	f.store_string ("\n")
-	if (idx == 0):
-		s.append ([String (get_node ("/root/dialogue_loader").page)])
-	else:
-		s[idx - 1] = String (get_node ("/root/dialogue_loader").page)
-	for i in s:
-		f.store_string (i[0])
-		f.store_string ("\n")
-	f.close ()
-	return true
-	
 func choice (n):
 	choicesHistory.append (n)
 	for c in DialogueControl.get_children ():
@@ -74,6 +34,8 @@ func choice (n):
 
 func go_to_page (i):
 	var x = data[i]
+	var d = DynamicFontData.new ()
+	var f = DynamicFont.new ()
 	if x.has ("b"):
 		BackgroundImage.set_texture (load (x["b"]))
 		clear_items () # We wont need extra items when changing scene
@@ -84,15 +46,13 @@ func go_to_page (i):
 	if x.has ("t"):
 		LabelDialog.set_text (x["t"])
 	if x.has ("f"):
-		var d = DynamicFontData.new ()
-		d.set_path (x["f"].insert (0, ""))
-		var f = DynamicFont.new ()
+		d.set_font_path ("res://" + x["f"])
 		f.set_font_data (d)
-		#LabelDialog.get_theme ().set_default_font (f)
+		LabelDialog.get_theme ().set_default_font (f)
 	if x.has ("c"):
 		LabelDialog.add_color_override ("font_color", Color (x["c"]))
 	if x.has ("ts"):
-		var f = LabelDialog.get_theme ().get_default_font ()
+		f = LabelDialog.get_theme ().get_default_font ()
 		f.set_size (x["ts"])
 		LabelDialog.get_theme ().set_default_font (f)
 		LabelDialog.set_margin (MARGIN_BOTTOM, text_margin)
@@ -120,8 +80,7 @@ func go_to_page (i):
 			InputMap.action_add_event ("next", i)
 
 func add_item (img, posX, posY):
-	var r = ImageTexture.new ()
-	r.load (img)
+	var r = load(img)
 	var t = TextureRect.new ()
 	t.set_texture (r)
 	BackgroundImage.add_child (t)
@@ -161,7 +120,9 @@ func next ():
 		go_to_page (get_node ("/root/dialogue_loader").page)
 		ButtonPrev.set_disabled (false)
 	else:
-		get_tree ().change_scene ("menu/menu.tscn")
+		var err = get_tree ().change_scene ("menu/menu.tscn")
+		if err :
+			print("Can't change scene!")
 
 func prev ():
 	if get_node ("/root/dialogue_loader").page > 0:
@@ -224,9 +185,10 @@ func _ready ():
 	ButtonImageNext = get_node ("Panel/PictNext")
 	ButtonNext = get_node ("Panel/ButtonNext")
 	ButtonPrev = get_node ("Panel/ButtonPrev")
+	DirPath = OS.get_executable_path().get_base_dir()
 	var t = Theme.new ()
 	var d = DynamicFontData.new ()
-	d.set_font_path ("dialogue/font.ttf") # Need to override the bitmap font with a vector font
+	d.set_font_path ("res://dialogue/fonts/font.ttf") # Need to override the bitmap font with a vector font
 	var f = DynamicFont.new ()
 	f.set_font_data (d)
 	f.set_size (12)
@@ -234,7 +196,7 @@ func _ready ():
 	LabelDialog.set_theme (t)
 	LabelDialog.set_margin (MARGIN_BOTTOM, text_margin)
 	var parser = XMLParser.new ()
-	if parser.open ("dialogue/data.xml") != 0:
+	if parser.open ("res://dialogue/data.xml") != 0:
 		print ("Error Opening: ", "dialogue/data.xml")
 		return null
 	data = get_node ("/root/dialogue_loader").get_dialogue_data (parser)
@@ -249,8 +211,10 @@ func _ready ():
 	if data.size () == 0:
 		print ("No scene data found")
 		get_tree ().quit ()
-	if get_saves ("/saves.gvnsave".insert (0, OS.get_user_data_dir ())) != []:
+	if(get_saves(DirPath) != []):
 		get_node ("Menu/CenterContainer/VBoxContainer/Load").set_disabled (false)
+	#if get_saves ("/saves.gvnsave".insert (0, OS.get_executable_path().get_base_dir())) != []:
+	#	get_node ("Menu/CenterContainer/VBoxContainer/Load").set_disabled (false)
 	nextActions = InputMap.get_action_list ("next")
 	go_to_page (get_node ("/root/dialogue_loader").page) # Needed for loading saved games
 	set_focus_mode (FOCUS_ALL)
@@ -276,18 +240,126 @@ func _input (event):
 				InputMap.action_add_event ("next", i)
 		accept_event ()
 
-func _on_SaveList_ItemList_item_activated (idx):
-	save_game ("/saves.gvnsave".insert (0, OS.get_user_data_dir ()), idx)
-	get_node ("Menu").hide ()
-	get_node ("Panel").show ()
-	p.queue_free ()
-	for i in nextActions:
-		InputMap.action_add_event ("next", i)
+func list_files_in_directory(path):
+	var files = []
+	var dir = Directory.new()
+	dir.open(path)
+	dir.list_dir_begin()
+	while true:
+		var file = dir.get_next()
+		if file == "":
+			break
+		elif not file.begins_with("."):
+			files.append(file)
+	dir.list_dir_end()
+	return files
+	
+func get_saves(path):
+	var dir = Directory.new()
+	var files
+	var f = File.new()
+	var saves = []
+	for i in range(20):
+		saves.append("")
+	if dir.dir_exists(path + "/saves"):
+		print("Saves directory exists.")
+		if (list_files_in_directory(path+"/saves") != []):
+			files = list_files_in_directory(path+"/saves")
+			for file in files:
+				if (file.begins_with("slot_") && file.ends_with(".sav")): 
+					if (f.open (path+"/saves/"+file, File.READ) != OK):
+						print("Couldn't open save file "+file)
+					else:
+						print("Save file "+file+" found.")
+						saves[int(file.lstrip("slot_").rstrip(".sav"))] = file
+						f.close()
+		#else:
+			#print("Saves directory is empty.")
+	else:
+		print("Saves directory does not exist, creating...")
+		dir.open(path)
+		dir.make_dir("saves")
+	return saves
 
-func _on_LoadList_ItemList_item_activated (idx):
-	load_game ("/saves.gvnsave".insert (0, OS.get_user_data_dir ()), idx)
+func save_game(idx):
+	var f = File.new()
+	var time = OS.get_datetime()
+	var nameweekday= ["Sun", "Mon", "Tue", "W", "Thu", "Fri", "Sat"]
+	var namemonth= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+	var dayofweek = time["weekday"]
+	var day = time["day"]
+	var month= time["month"]
+	var year= time["year"]
+	var hour= time["hour"]
+	var minute= time["minute"]
+	var second= time["second"]
+	var date = str(nameweekday[dayofweek])+" "+str("%02d" % [day])+" "+str(namemonth[month-1])+" "+str(year)+" "+str("%02d" % [hour])+":"+str("%02d" % [minute])+":"+str("%02d" % [second])
+	
+	if (f.open (DirPath+"/saves/slot_"+String(idx)+".sav", File.WRITE) != OK):
+		print("Couldn't open save file in slot "+idx)
+		return false
+	else:
+		f.store_line ("Godot vn save file, do not edit by hand.")
+		f.store_line (get_node ("/root/dialogue_loader").game_name)
+		f.store_line ("date:"+date)
+		f.store_line ("xml file")
+		f.store_line ("page:"+String (get_node ("/root/dialogue_loader").page))
+		f.store_line("choices_history:")
+		for choice in choicesHistory:
+			f.store_string(str(choicesHistory[choice-1]))
+			f.store_string(',')
+		f.store_line ("")
+		f.close ()
+		return true
+
+	
+func load_game (idx):
+	var f = File.new()
+	var s = get_saves (DirPath)
+	var line
+	var page = -1
+	if s == null or idx >= s.size ():
+		return false
+		
+	if (f.open (DirPath+"/saves/"+"slot_"+str(idx)+".sav", File.READ) != OK):
+		print("Couldn't read save file "+"slot_"+str(idx)+".sav")
+	else:
+		while not f.eof_reached():
+			line = f.get_line()
+			if line.begins_with("page:"):
+				page = int(line.lstrip("page:"))
+		f.close()
+		if (page < 0):
+			print("Load game failed - save file doesn't contain saved page!")
+			return false
+	get_node ("/root/dialogue_loader").page = page
+	prev () # Reload items that may not be specified on current page
+	next ()
+	return true
+
+func _on_SaveList_ItemList_item_activated (idx):
+	save_game (idx)
 	get_node ("Menu").hide ()
 	get_node ("Panel").show ()
+	popup("Saved game in slot "+String(idx)+"!")
 	p.queue_free ()
-	for i in nextActions:
-		InputMap.action_add_event ("next", i)
+	
+func _on_LoadList_ItemList_item_activated (idx):
+	load_game (idx)
+	get_node ("Menu").hide ()
+	get_node ("Panel").show ()
+	popup("Loaded game from slot "+String(idx)+"!")
+	p.queue_free ()
+	#for i in nextActions:
+	#	InputMap.action_add_event ("next", i)
+	
+func popup(text):
+	var l = Label.new ()
+	var x = PanelContainer.new ()
+	var p = PopupDialog.new ()
+	l.set_text (text)
+	x.add_child (l)	
+	p.add_child (x)
+	get_tree ().get_current_scene ().add_child (p)
+	p.popup_centered (Vector2 (0, 0))
+
