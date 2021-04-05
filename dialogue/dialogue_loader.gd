@@ -134,6 +134,9 @@ func get_dialogue_data (parser):
 			if parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "items":
 				i = []
 				e = parser.read ()
+				# FIXME - hack to "eat" extra text node when there's whitespace before first <item>
+				if parser.get_node_type () == XMLParser.NODE_TEXT:
+					e = parser.read ()
 				while parser.get_node_type () == XMLParser.NODE_TEXT and indentFilter.search (parser.get_node_data ()).get_string () == parser.get_node_data (): #
 					e = parser.read ()
 				while parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "item":
