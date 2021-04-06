@@ -134,7 +134,6 @@ margin_top = 72.0
 margin_right = 82.0
 margin_bottom = 92.0
 hint_tooltip = "Start the builtin editor"
-disabled = true
 text = "Editor"
 script = SubResource( 6 )
 
