@@ -201,7 +201,7 @@ func dump_data (datafile, data):
 				f.store_string ("\"".insert (0, x[0].insert (0, "\n    <choice goto=\"")))
 				f.store_string ("</choice>".insert (0, String (x[1]).insert (0, ">")))
 			f.store_string ("\n  ")
-		if i.has ("t") and not (i.has ("i") or i.has ("x")):
+		if i.has ("t") and not (i.get ("i") or i.has ("x")):
 			f.store_string (i["t"].xml_escape ())
 		f.store_line ("</scene_data>")
 	f.store_line ("</scenes>")
