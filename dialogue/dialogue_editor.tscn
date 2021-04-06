@@ -6,7 +6,7 @@
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	var f = FileDialog.new ()
 	get_node (\"/root/Panel\").f = f
 	f.add_filter (\"*.xml; XML File, \")
@@ -20,14 +20,14 @@ func pressed ():
 [sub_resource type="GDScript" id=2]
 script/source = "extends Button
 
-func pressed ():
-	get_node (\"/root/dialogue_loader\").dump_data (get_node (\"/root/Panel\").datafile, get_node (\"/root/Panel\").data)
+func _pressed ():
+	get_node (\"/root/dialogue_loader\").dump_data (get_node (\"/root/dialogue_loader\").datafile, get_node (\"/root/Panel\").data)
 "
 
 [sub_resource type="GDScript" id=3]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_node (\"/root/dialogue_loader\").page = get_node (\"/root/Panel/\").currentScene
 	get_tree ().change_scene (\"dialogue/dialogue.tscn\")
 "
@@ -35,7 +35,7 @@ func pressed ():
 [sub_resource type="GDScript" id=4]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	if true:
 		get_tree ().change_scene (\"menu/menu.tscn\")
 "
@@ -43,7 +43,7 @@ func pressed ():
 [sub_resource type="GDScript" id=5]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	var l = Label.new ()
 	l.set_text (\"Welcome to the Godot VN Editor Help\\nThe top level elements are related to files and the engine.\\nThe ones bellow it allow you to change the current dialgue scenes\\nIf something does not work, you an edit data.xml in the dialogue subfolder with a texteditor.\")
 	var x = PanelContainer.new ()
@@ -65,7 +65,7 @@ script/source = "extends HSlider
 [sub_resource type="GDScript" id=8]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_node (\"/root/Panel/\").save_page_data ()
 	get_node (\"/root/Panel/\").goto_page (get_node (\"/root/Panel/\").currentScene - 1)
 	get_node (\"/root/Panel/VBoxContainer/SceneNumber/CurrentSceneNumber\").set_value (get_node (\"/root/Panel/\").currentScene + 1) "
@@ -73,7 +73,7 @@ func pressed ():
 [sub_resource type="GDScript" id=9]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_node (\"/root/Panel/\").save_page_data ()
 	get_node (\"/root/Panel/\").goto_page (get_node (\"/root/Panel/\").currentScene + 1)
 	get_node (\"/root/Panel/VBoxContainer/SceneNumber/CurrentSceneNumber\").set_value (get_node (\"/root/Panel/\").currentScene + 1) 
@@ -82,7 +82,7 @@ func pressed ():
 [sub_resource type="GDScript" id=10]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_node (\"/root/Panel/\").data.insert (get_node (\"/root/Panel/\").currentScene, {})
 	get_node (\"/root/Panel/\").load_page_data (get_node (\"/root/Panel/\").currentScene)
 	get_node (\"/root/Panel/VBoxContainer/SceneNumber/MaxLabel/\").set_text (\"Of: \".insert (4, String (get_node (\"/root/Panel/\").data.size ())))
@@ -92,7 +92,7 @@ func pressed ():
 [sub_resource type="GDScript" id=11]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_node (\"/root/Panel/\").data.remove (get_node (\"/root/Panel/\").currentScene)
 	get_node (\"/root/Panel/VBoxContainer/SceneNumber/MaxLabel/\").set_text (\"Of: \".insert (4, String (get_node (\"/root/Panel/\").data.size ())))
 	get_node (\"/root/Panel/\").load_page_data (get_node (\"/root/Panel/\").currentScene)
@@ -102,14 +102,14 @@ func pressed ():
 [sub_resource type="GDScript" id=12]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	get_node (\"/root/Panel/\").data.insert (get_node (\"/root/Panel/\").currentScene, get_node (\"/root/Panel/\").data[get_node (\"/root/Panel/\").currentScene])
 	get_node (\"/root/Panel\").load_page_data (get_node (\"/root/Panel/\").currentScene)
 	get_node (\"/root/Panel/VBoxContainer/SceneNumber/MaxLabel/\").set_text (\"Of: \".insert (4, String (get_node (\"/root/Panel/\").data.size ())))
 	get_node (\"/root/Panel\").set_editor_data ()
 "
 
-[sub_resource type="GDScript" id=13]
+[sub_resource type="GDScript" id=40]
 script/source = "extends CheckBox
 
 func _pressed ():
@@ -123,7 +123,7 @@ script/source = "extends TextEdit
 [sub_resource type="GDScript" id=15]
 script/source = "extends LinkButton
 
-func pressed ():
+func _pressed ():
 	var f = FileDialog.new ()
 	get_node (\"/root/Panel\").f = f
 	f.add_filter (\"*.tex; Texture resource, \")
@@ -137,7 +137,7 @@ func pressed ():
 [sub_resource type="GDScript" id=16]
 script/source = "extends Button
 
-func pressed ():
+func _pressed ():
 	if get_node (\"/root/Panel/\").background_image != null:
 		var i = ImageTexture.new ()
 		i.load (get_node (\"/root/Panel/\").background_image)
@@ -156,7 +156,7 @@ func pressed ():
 [sub_resource type="GDScript" id=17]
 script/source = "extends LinkButton
 
-func pressed ():
+func _pressed ():
 	var f = FileDialog.new ()
 	get_node (\"/root/Panel\").f = f
 	f.add_filter (\"*.ogg; OGG Vorbis, \")
@@ -186,7 +186,7 @@ func _pressed ():
 [sub_resource type="GDScript" id=19]
 script/source = "extends LinkButton
 
-func pressed ():
+func _pressed ():
 	var f = FileDialog.new ()
 	get_node (\"/root/Panel\").f = f
 	f.add_filter (\"*.ogg; OGG Vorbis, \")
@@ -216,7 +216,7 @@ func _pressed ():
 [sub_resource type="GDScript" id=21]
 script/source = "extends LinkButton
 
-func pressed ():
+func _pressed ():
 	var f = FileDialog.new ()
 	get_node (\"/root/Panel\").f = f
 	f.add_filter (\"*.ttf; True Type Font, \")
@@ -263,7 +263,7 @@ script/source = "extends ItemList
 [sub_resource type="GDScript" id=29]
 script/source = "extends LinkButton
 
-func pressed ():
+func _pressed ():
 	if get_node (\"/root/Panel\").items != null:
 		var f = FileDialog.new ()
 		get_node (\"/root/Panel\").f = f
@@ -354,11 +354,17 @@ script/source = "extends LineEdit
 anchor_right = 1.0
 anchor_bottom = 1.0
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 anchor_right = 1.0
 margin_bottom = 510.0
 alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="MainButtons" type="HBoxContainer" parent="VBoxContainer"]
 margin_top = 55.0
@@ -581,7 +587,7 @@ margin_bottom = 24.0
 hint_tooltip = "Use text in current dialogue"
 pressed = true
 text = "Activated"
-script = SubResource( 13 )
+script = SubResource( 40 )
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/DataEditor/TextData"]
 margin_left = 123.0
