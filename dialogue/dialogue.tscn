@@ -66,8 +66,6 @@ func _pressed ():
 	var saves = get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir())
 	var savedata = \"\"
 	i.set_custom_minimum_size (Vector2 (100, 100))
-	#for x in get_node (\"/root/Control\").get_saves (\"/saves.gvnsave\".insert (0, OS.get_executable_path().get_base_dir())):
-	#	i.add_item (x[0])
 	for j in range(20):
 		if (saves != []):
 			if (saves[j] != \"\"):

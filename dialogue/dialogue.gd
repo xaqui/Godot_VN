@@ -80,6 +80,9 @@ func go_to_page (i):
 			InputMap.action_add_event ("next", i)
 
 func add_item (img, posX, posY):
+	if (img == "EMPTY_SET") :
+		clear_items()
+		return
 	var r = load(img)
 	var t = TextureRect.new ()
 	t.set_texture (r)
@@ -260,19 +263,15 @@ func get_saves(path):
 	for i in range(20):
 		saves.append("")
 	if dir.dir_exists(path + "/saves"):
-		print("Saves directory exists.")
 		if (list_files_in_directory(path+"/saves") != []):
 			files = list_files_in_directory(path+"/saves")
 			for file in files:
 				if (file.begins_with("slot_") && file.ends_with(".sav")): 
 					if (f.open (path+"/saves/"+file, File.READ) != OK):
-						print("Couldn't open save file "+file)
+						print("Cant open save file "+file)
 					else:
-						print("Save file "+file+" found.")
 						saves[int(file.lstrip("slot_").rstrip(".sav"))] = file
 						f.close()
-		#else:
-			#print("Saves directory is empty.")
 	else:
 		print("Saves directory does not exist, creating...")
 		dir.open(path)
@@ -302,7 +301,7 @@ func save_game(idx):
 	}
 	
 	if (f.open (DirPath+"/saves/slot_"+String(idx)+".sav", File.WRITE) != OK):
-		print("Couldn't open save file in slot "+idx)
+		popup_err("Couldn't open save file in slot "+idx)
 		return false
 	else:
 		savedata.game = get_node ("/root/dialogue_loader").game_name
@@ -326,7 +325,8 @@ func load_game (idx):
 		return false
 		
 	if (f.open (DirPath+"/saves/"+"slot_"+str(idx)+".sav", File.READ) != OK):
-		print("Couldn't read save file "+"slot_"+str(idx)+".sav")
+		print("Can't open save file "+"slot_"+str(idx)+".sav")
+		return false
 	else:
 		savedata = parse_json(f.get_line())
 		f.close()
@@ -345,17 +345,21 @@ func load_game (idx):
 	return true
 
 func _on_SaveList_ItemList_item_activated (idx):
-	save_game (idx)
-	get_node ("Menu").hide ()
-	get_node ("Panel").show ()
-	popup("Saved game in slot "+String(idx)+"!")
+	if save_game (idx):
+		get_node ("Menu").hide ()
+		get_node ("Panel").show ()
+		popup("Saved game in slot "+String(idx)+"!")
+	else:
+		popup_err("Could not save game in slot "+String(idx)+"!")
 	p.queue_free ()
 	
 func _on_LoadList_ItemList_item_activated (idx):
-	load_game (idx)
-	get_node ("Menu").hide ()
-	get_node ("Panel").show ()
-	popup("Loaded game from slot "+String(idx)+"!")
+	if load_game (idx):
+		get_node ("Menu").hide ()
+		get_node ("Panel").show ()
+		popup("Loaded game from slot "+String(idx)+"!")
+	else:
+		popup_err("Could not load game from slot "+String(idx)+"!")
 	p.queue_free ()
 	#for i in nextActions:
 	#	InputMap.action_add_event ("next", i)
@@ -363,10 +367,21 @@ func _on_LoadList_ItemList_item_activated (idx):
 func popup(text):
 	var l = Label.new ()
 	var x = PanelContainer.new ()
-	var p = PopupDialog.new ()
+	var pd = PopupDialog.new ()
 	l.set_text (text)
-	x.add_child (l)	
-	p.add_child (x)
-	get_tree ().get_current_scene ().add_child (p)
-	p.popup_centered (Vector2 (0, 0))
+	x.add_child (l)
+	pd.add_child (x)
+	get_tree ().get_current_scene ().add_child (pd)
+	pd.popup_centered (Vector2 (0, 0))
+	
+func popup_err(text):
+	var l = Label.new ()
+	var x = PanelContainer.new ()
+	var pd = PopupDialog.new ()
+	l.set_text (text)
+	l.add_color_override ("font_color", Color("#fc0303"))
+	x.add_child (l)
+	pd.add_child (x)
+	get_tree ().get_current_scene ().add_child (pd)
+	pd.popup_centered (Vector2 (0, 0))
 
