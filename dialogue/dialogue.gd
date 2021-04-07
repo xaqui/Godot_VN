@@ -213,8 +213,6 @@ func _ready ():
 		get_tree ().quit ()
 	if(get_saves(DirPath) != []):
 		get_node ("Menu/CenterContainer/VBoxContainer/Load").set_disabled (false)
-	#if get_saves ("/saves.gvnsave".insert (0, OS.get_executable_path().get_base_dir())) != []:
-	#	get_node ("Menu/CenterContainer/VBoxContainer/Load").set_disabled (false)
 	nextActions = InputMap.get_action_list ("next")
 	go_to_page (get_node ("/root/dialogue_loader").page) # Needed for loading saved games
 	set_focus_mode (FOCUS_ALL)
@@ -284,7 +282,7 @@ func get_saves(path):
 func save_game(idx):
 	var f = File.new()
 	var time = OS.get_datetime()
-	var nameweekday= ["Sun", "Mon", "Tue", "W", "Thu", "Fri", "Sat"]
+	var nameweekday= ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
 	var namemonth= ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
 	var dayofweek = time["weekday"]
 	var day = time["day"]
@@ -294,21 +292,28 @@ func save_game(idx):
 	var minute= time["minute"]
 	var second= time["second"]
 	var date = str(nameweekday[dayofweek])+" "+str("%02d" % [day])+" "+str(namemonth[month-1])+" "+str(year)+" "+str("%02d" % [hour])+":"+str("%02d" % [minute])+":"+str("%02d" % [second])
+	var savedata = {
+		"game" : "",
+		"version" : "",
+		"date": "",
+		"scene": "",
+		"page": -1,
+		"choices_history": []
+	}
 	
 	if (f.open (DirPath+"/saves/slot_"+String(idx)+".sav", File.WRITE) != OK):
 		print("Couldn't open save file in slot "+idx)
 		return false
 	else:
-		f.store_line ("Godot vn save file, do not edit by hand.")
-		f.store_line (get_node ("/root/dialogue_loader").game_name)
-		f.store_line ("date:"+date)
-		f.store_line ("xml file")
-		f.store_line ("page:"+String (get_node ("/root/dialogue_loader").page))
-		f.store_line("choices_history:")
-		for choice in choicesHistory:
-			f.store_string(str(choicesHistory[choice-1]))
-			f.store_string(',')
-		f.store_line ("")
+		savedata.game = get_node ("/root/dialogue_loader").game_name
+		savedata.version = get_node ("/root/dialogue_loader").game_version
+		savedata.date = date
+		savedata.scene = get_node ("/root/dialogue_loader").datafile
+		savedata.page = get_node ("/root/dialogue_loader").page
+		if choicesHistory != []: 
+			for choice in choicesHistory:
+				savedata.choices_history[choice] = choicesHistory[choice]
+		f.store_line(to_json(savedata))
 		f.close ()
 		return true
 
@@ -316,23 +321,25 @@ func save_game(idx):
 func load_game (idx):
 	var f = File.new()
 	var s = get_saves (DirPath)
-	var line
-	var page = -1
+	var savedata = {}
 	if s == null or idx >= s.size ():
 		return false
 		
 	if (f.open (DirPath+"/saves/"+"slot_"+str(idx)+".sav", File.READ) != OK):
 		print("Couldn't read save file "+"slot_"+str(idx)+".sav")
 	else:
-		while not f.eof_reached():
-			line = f.get_line()
-			if line.begins_with("page:"):
-				page = int(line.lstrip("page:"))
+		savedata = parse_json(f.get_line())
 		f.close()
-		if (page < 0):
+		if (savedata.page < 0):
 			print("Load game failed - save file doesn't contain saved page!")
 			return false
-	get_node ("/root/dialogue_loader").page = page
+		if (savedata.game != get_node ("/root/dialogue_loader").game_name):
+			print("Error: incorrect save file for " + get_node ("/root/dialogue_loader").game_name)
+			return false
+		if (savedata.version != get_node ("/root/dialogue_loader").game_version):
+			print("Error: save file game version does not match current game version")
+			return false
+	get_node ("/root/dialogue_loader").page = savedata.page
 	prev () # Reload items that may not be specified on current page
 	next ()
 	return true
