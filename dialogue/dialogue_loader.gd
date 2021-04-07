@@ -7,7 +7,7 @@ var game_name = ""
 var game_version = ""
 var game_url = ""
 var game_author = ""
-#var datafile = "dialogue/data.xml"
+var datafile = "dialogue/data.xml"
 var page = 0
 var meta
 
@@ -35,13 +35,13 @@ func get_dialogue_meta_data (parser):
 func get_dialogue_data (parser):
 	var e = 0
 	var data = []
-	#var background
-	#var text
-	#var backgroundsound
-	#var dialoguesound
+	var background
+	var text
+	var backgroundsound
+	var dialoguesound
 	var c = 0
 	var a = {}
-	#var goto
+	var goto
 	var y
 	var id
 	var z
@@ -58,11 +58,11 @@ func get_dialogue_data (parser):
 		if parser.get_node_type () == XMLParser.NODE_ELEMENT and parser.get_node_name () == "scene_data":
 			var i = null
 			var d = {}
-	#		dialoguesound = null
-	#		backgroundsound = null
-	#		background = null
+			dialoguesound = null
+			backgroundsound = null
+			background = null
 			c = c + 1
-	#		goto = null
+			goto = null
 			var x = []
 			if parser.has_attribute ("id"):
 				id = parser.get_named_attribute_value ("id")
@@ -201,7 +201,7 @@ func dump_data (datafile, data):
 				f.store_string ("\"".insert (0, x[0].insert (0, "\n    <choice goto=\"")))
 				f.store_string ("</choice>".insert (0, String (x[1]).insert (0, ">")))
 			f.store_string ("\n  ")
-		if i.has ("t") and not (i.has ("i") or i.has ("x")):
+		if i.has ("t") and not (i.get ("i") or i.has ("x")):
 			f.store_string (i["t"].xml_escape ())
 		f.store_line ("</scene_data>")
 	f.store_line ("</scenes>")
