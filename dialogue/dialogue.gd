@@ -36,43 +36,43 @@ func go_to_page (i):
 	var x = data[i]
 	var d = DynamicFontData.new ()
 	var f = DynamicFont.new ()
-	if x.has ("b"):
+	if x.get ("b"):
 		BackgroundImage.set_texture (load (x["b"]))
 		clear_items () # We wont need extra items when changing scene
-	if x.has ("i"):
+	if x.get ("i"):
 		clear_items ()
 		for item in (x["i"]):
 			add_item (item[0], item[1], item[2])
-	if x.has ("t"):
+	if x.get ("t"):
 		LabelDialog.set_text (x["t"])
-	if x.has ("f"):
+	if x.get ("f"):
 		d.set_font_path ("res://" + x["f"])
 		f.set_font_data (d)
 		LabelDialog.get_theme ().set_default_font (f)
-	if x.has ("c"):
+	if x.get ("c"):
 		LabelDialog.add_color_override ("font_color", Color (x["c"]))
-	if x.has ("ts"):
+	if x.get ("ts"):
 		f = LabelDialog.get_theme ().get_default_font ()
 		f.set_size (x["ts"])
 		LabelDialog.get_theme ().set_default_font (f)
 		LabelDialog.set_margin (MARGIN_BOTTOM, text_margin)
-	if x.has ("d"):
+	if x.get ("d"):
 		DialogueSound.stop ()
 		DialogueSound.set_stream (load (x["d"]))
 		DialogueSound.get_stream ().set_loop (false)
 		DialogueSound.play ()
 	else:
 		DialogueSound.stop ()
-	if x.has ("s") and x["s"] != "":
+	if x.get ("s") and x["s"] != "":
 		BackgroundSound.stop ()
 		BackgroundSound.set_stream (load (x["s"]))
 		BackgroundSound.play ()
-	elif x.has ("s") and x["s"] == "":
+	elif x.get ("s") and x["s"] == "":
 		BackgroundSound.stop ()
-	if x.has ("g"):
+	if x.get ("g"):
 		Last = get_node ("/root/dialogue_loader").page
 		get_node ("/root/dialogue_loader").page = assocs[x["g"]] - 2 # Next will incrememnt
-	if x.has ("x"):
+	if x.get ("x"):
 		show_choice (x)
 	else:
 		Forks = null
@@ -137,39 +137,39 @@ func prev ():
 			InputMap.action_add_event ("next", i)
 		DialogueControl.hide ()
 	var x = data[get_node ("/root/dialogue_loader").page]
-	if not x.has ("c"):
+	if not x.get ("c"):
 		var i = get_node ("/root/dialogue_loader").page - 1
-		while not data[i].has ("c") and i >= 0:
+		while not data[i].get ("c") and i >= 0:
 			i = i - 1
 		if (i >= 0):
 			LabelDialog.add_color_override ("font_color", Color (data[i]["c"]))
-	if not x.has ("b"):
+	if not x.get ("b"):
 		var i = get_node ("/root/dialogue_loader").page - 1
-		while (not data[i].has ("b") and i >= 0):
+		while (not data[i].get ("b") and i >= 0):
 			i = i - 1
 		if i >= 0:
 			BackgroundImage.set_texture (load (data[i]["b"]))
-	if not x.has ("ts"):
+	if not x.get ("ts"):
 		var i = get_node ("/root/dialogue_loader").page - 1
-		while not data[i].has ("ts") and i >= 0:
+		while not data[i].get ("ts") and i >= 0:
 			i = i - 1
 		if i >= 0:
 			var f = LabelDialog.get_theme ().get_default_font ()
 			f.set_size (data[i]["ts"])
 			LabelDialog.get_theme ().set_default_font (f)
 			LabelDialog.set_margin (MARGIN_BOTTOM, text_margin)
-	if not x.has ("s"):
+	if not x.get ("s"):
 		var i = get_node ("/root/dialogue_loader").page - 1
-		while not data[i].has ("s") and i >= 0:
+		while not data[i].get ("s") and i >= 0:
 			i = i - 1
 		if i >= 0 and load (data[i]["s"]).get_path () != BackgroundSound.get_stream ().get_path ():
 			BackgroundSound.stop ()
 			if data[i]["s"] != "":
 				BackgroundSound.set_stream (load (data[i]["s"]))
 				BackgroundSound.play (0)
-	if not x.has ("i"):
+	if not x.get ("i"):
 		var i = get_node ("/root/dialogue_loader").page - 1
-		while not data[i].has ("i") and i >= 0:
+		while not data[i].get ("i") and i >= 0:
 			i = i - 1
 		if i >= 0:
 			clear_items ()
@@ -204,7 +204,7 @@ func _ready ():
 		print ("XML read failure")
 		get_tree ().quit ()
 	var meta = data[0]
-	if (meta.has ("name")):
+	if (meta.get ("name")):
 		get_node ("/root/dialogue_loader").game_name = meta["name"]
 	assocs = data[1]
 	data = data[2]
