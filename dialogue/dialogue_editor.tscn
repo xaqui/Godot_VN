@@ -109,7 +109,7 @@ func _pressed ():
 	get_node (\"/root/Panel\").set_editor_data ()
 "
 
-[sub_resource type="GDScript" id=40]
+[sub_resource type="GDScript" id=13]
 script/source = "extends CheckBox
 
 func _pressed ():
@@ -587,7 +587,7 @@ margin_bottom = 24.0
 hint_tooltip = "Use text in current dialogue"
 pressed = true
 text = "Activated"
-script = SubResource( 40 )
+script = SubResource( 13 )
 
 [node name="TextEdit" type="TextEdit" parent="VBoxContainer/DataEditor/TextData"]
 margin_left = 123.0
@@ -733,7 +733,7 @@ margin_right = 424.0
 margin_bottom = 24.0
 rect_min_size = Vector2( 300, 12 )
 hint_tooltip = "Font file to use on current dialgue page"
-text = "dialogue/font.ttf"
+text = "dialogue/fonts/font.ttf"
 script = SubResource( 21 )
 
 [node name="PreviewLabel" type="Label" parent="VBoxContainer/DataEditor/FontData"]

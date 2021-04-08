@@ -20,18 +20,27 @@ func _pressed ():
 	get_node (\"/root/Control\").p = PopupPanel.new ()
 	var i = ItemList.new ()
 	var saves = get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir())
-	var savedata = \"\"
+	var save_date = \"\"
+	var savedata = {}
+	var f = File.new()
+	
 
-	i.set_custom_minimum_size (Vector2 (100, 100))
+	i.set_custom_minimum_size (Vector2 (300, 100))
 	#i.add_item (\"New Save\")
 	#for x in get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir()):
 	#	i.add_item (x)
 	for j in range(20):
 		if (saves != []):
-			if (saves[j] != \"\"):
-				savedata = \"(*)\"
-		i.add_item(\"Slot \"+String(j)+savedata)
-		savedata = \"\"
+			if (saves[j] != \"\"):			
+				if (f.open (OS.get_executable_path().get_base_dir()+\"/saves/\"+saves[j], File.READ) == OK):
+					savedata = parse_json(f.get_line())
+					if (savedata.date != null && savedata.date != \"\"):
+						save_date = \": \"+savedata.date
+					f.close()
+				else:
+					save_date = \" (*)\" #Failsafe in case get save time stamp failed
+		i.add_item(\"Slot \"+String(j)+save_date)
+		save_date = \" \"
 	
 	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_SaveList_ItemList_item_activated\")
 	var v = VBoxContainer.new ()
@@ -64,14 +73,23 @@ func _pressed ():
 	get_node (\"/root/Control\").p = PopupPanel.new ()
 	var i = ItemList.new ()
 	var saves = get_node (\"/root/Control\").get_saves (OS.get_executable_path().get_base_dir())
-	var savedata = \"\"
-	i.set_custom_minimum_size (Vector2 (100, 100))
+	var save_date = \"\"
+	var savedata = {}
+	var f = File.new()
+	
+	i.set_custom_minimum_size (Vector2 (300, 100))
 	for j in range(20):
 		if (saves != []):
 			if (saves[j] != \"\"):
-				savedata = \"(*)\"
-		i.add_item(\"Slot \"+String(j)+savedata)
-		savedata = \"\"
+				if (f.open (OS.get_executable_path().get_base_dir()+\"/saves/\"+saves[j], File.READ) == OK):
+					savedata = parse_json(f.get_line())
+					if (savedata.date != null && savedata.date != \"\"):
+						save_date = \": \"+savedata.date
+					f.close()
+				else:
+					save_date = \" (*)\" #Failsafe in case get save time stamp failed
+		i.add_item(\"Slot \"+String(j)+save_date)
+		save_date = \"\"
 	i.connect (\"item_activated\", get_node (\"/root/Control\"), \"_on_LoadList_ItemList_item_activated\")
 	var v = VBoxContainer.new ()
 	var h = HBoxContainer.new ()
