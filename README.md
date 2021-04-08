@@ -4,7 +4,7 @@ This is a fork of [this repo](https://gitlab.com/Code_Man/Godot_VN).
 
 This is  a Visual Novel framework for the Godot game engine, similar to RenPy.<br>
 
-###Features
+### Features
 *   Godot Engine v3.2 compatible.
 *   It displays an image and with optional background sound through different pages until changed.
 *   The user can switch between pages back and forth with mouse buttons at the bottom and optionally the keyboard.
