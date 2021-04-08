@@ -19,14 +19,14 @@ Data is stored in a xml file and can be edited with the builtin editor or by han
 *   Advanced script integration: right now it's limited to simple jumps based on the choices.
 
 ### License
-<p>[MIT (X11) License](https://github.com/xaqui/Godot_VN/blob/master/LICENSE)<br>
-You may use it in any way you like, including closed source and commercial use.<br>
+[MIT (X11) License](https://github.com/xaqui/Godot_VN/blob/master/LICENSE)<br>
+<p>You may use it in any way you like, including closed source and commercial use.<br>
 However without no warranty from me, the original author nor the Godot developers is given, use at own risk.<br>
 This work is public domain(CC0) and MIT X11 lisence where CC0 is not applicable.<br>
 Credit is not needed to be given, but it would be nice if it was so others can take advantage of this work too.<br></p>
 
 ### Credits
-<p>[Code_Man](https://gitlab.com/Code_Man) : Original author of Godot VN<br>
+<[Code_Man](https://gitlab.com/Code_Man) : Original author of Godot VN<br>
 [Xaqui](https://github.com/xaqui) : Contributor<br>
 [Drewler](https://github.com/drewler) : Contrubutor<br>
-Godot developers, see <http://godotengine.org> for a complete list.<br></p>
+Godot developers, see <http://godotengine.org> for a complete list.<br>
