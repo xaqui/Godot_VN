@@ -2,13 +2,17 @@
 
 This is a fork of [this repo](https://gitlab.com/Code_Man/Godot_VN).
 
-<p>This is  a Visual Novel framework for the Godot game engine, similar to RenPy.<br>
-It displays an image and with optional background sound trough different pages until changed.<br>
-The user can switch between pages back and forth with mouse buttons at the bottom and optionally the keyboard.<br>
-A text on every page is displayed at the bottom, with custom fonts with configurable sizes and colors.<br>
-Per page sound can also be played, only one at a time however, it will be stopped once the player changes to a new page.<br>
-The player can also be forced to make a choice of possible responses provided trough a menu that will skip to some position.<br>
-Data is stored in a xml file and can be edited with the builtin editor or by hand optionally.<br></p>
+This is  a Visual Novel framework for the Godot game engine, similar to RenPy.<br>
+
+###Features
+*   Godot Engine v3.2 compatible.
+*   It displays an image and with optional background sound through different pages until changed.
+*   The user can switch between pages back and forth with mouse buttons at the bottom and optionally the keyboard.
+*   A text on every page is displayed at the bottom, with custom fonts with configurable sizes and colors.
+*   Per page sound can also be played, only one at a time however, it will be stopped once the player changes to a new page.
+*   The player can also be forced to make a choice of possible responses provided trough a menu that will skip to some position.
+*   Data is stored in a xml file and can be edited with the built-in editor or by hand optionally.
+*   Game progress can be saved and loaded.
 
 ### To Do
 *   Text Animations.
@@ -26,7 +30,7 @@ This work is public domain(CC0) and MIT X11 lisence where CC0 is not applicable.
 Credit is not needed to be given, but it would be nice if it was so others can take advantage of this work too.<br></p>
 
 ### Credits
-<[Code_Man](https://gitlab.com/Code_Man) : Original author of Godot VN<br>
+[Code_Man](https://gitlab.com/Code_Man) : Original author of Godot VN<br>
 [Xaqui](https://github.com/xaqui) : Contributor<br>
 [Drewler](https://github.com/drewler) : Contrubutor<br>
 Godot developers, see <http://godotengine.org> for a complete list.<br>
