@@ -18,6 +18,7 @@ This is  a Visual Novel framework for the Godot game engine, similar to RenPy.<b
 *   Text Animations.
 *   BBCode.
 *   User manual.
+*   Add loading saved games function from main menu.
 *   Configurable sound parameters: such as fading and volume.
 *   Customizable interfaces: such as themes and custom buttons.
 *   Advanced script integration: right now it's limited to simple jumps based on the choices.
