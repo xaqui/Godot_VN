@@ -1,0 +1,156 @@
+{
+	"meta": {
+		"version": "3.0",
+		"encoding": "UTF-8",
+		"author": "Xaqui",
+		"game_name": "Godot VN Demo",
+		"scene": "demo"
+	},
+	"dialogue": [
+		{
+			"character":"",
+			"text": "",
+			"font": "",
+			"sprites": [ ],
+			"background": "",
+			"items": [ ],
+			"id": "",
+			"music": "",
+			"sound": "",
+			"choices": [ ],
+			"jump": 0
+		},
+		{
+			"text": "[color=#ff0000]Godot VN Demo, press the button at the right to proceed.[/color]",
+			"font": "dialogue/fonts/font.ttf",
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Welcome to the godot VN demonstration.[/color]",
+			"font": "dialogue/fonts/Stanberry.ttf",
+			"sprites": [
+				{
+					"path":"dialogue/character/godette/1.png",
+					"active":true
+				},
+			],
+			"music": ""
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]You can move either backward and forward trough the buttons or with the keyboard.[/color]",
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Here are the features of Godot VN:[/color]",
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Every page displays some content.[/color]",
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Background pictures can be changed.[/color]",
+			"background": ""
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Music can be played.[/color]",
+			"music": ""
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Sound effects can be played.[/color]",
+			"sound": "dialogue/sounds/sound.ogg"
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]You can change the font.\nalso use [/color][wave][color=#00995c][b]BB Code[/b][/color][/wave]",
+			"font": "dialogue/fonts/font.ttf"
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]You can load items on screen, like this.[/color]",
+			"font": "dialogue/fonts/Stanberry.ttf",
+			"items": [
+				{
+					"path":"dialogue/images/item.png",
+					"x":100,
+					"y":100
+				},
+				{
+					"path":"dialogue/images/item.png",
+					"x":700,
+					"y":200
+				}
+			]
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]All these effects will stay until replaced with a new one or an empty set.[/color]",
+			"music": "",
+			"sound": "",
+			"items": [ ]
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]You may also make choices for branching dialogue paths.[/color]",
+			"choices": [
+				{
+					"text": "Choose A",
+					"jump": "a"
+				},
+				{
+					"text": "Choose B",
+					"jump": "b"
+				},
+			]
+		},
+		{
+			"character":"",
+			"sprites": [ ],
+			"id": "a",
+			"text": "[color=#00111a]You have chosen [b]A[/b][/color]",
+			"jump": "c",
+			"font": "dialogue/fonts/font.ttf"
+		},
+		{
+			"character":"",
+			"sprites": [ ],
+			"id": "b",
+			"text": "[color=#00111a]You have chosen [b]B[/b][/color]",
+			"jump": "c",
+			"font": "dialogue/fonts/font.ttf"
+		},
+				{
+			"character":"Godette",
+			"sprites": [
+				{
+					"path":"dialogue/character/godette/1.png",
+					"active":true
+				},
+			],
+			"id": "c",
+			"text": "[color=#00111a]If you pressed A, you will have seen A and skipped B, and the other way around too.[/color]",
+			"font": "dialogue/fonts/Stanberry.ttf"
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]You can also save and load the game.[/color]"
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]You can use the built-in editor from the main menu to make scenes.\nOr edit them by hand, it's not so hard to do so.[/color]"
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]These are all the features so far.[/color]"
+		},
+		{
+			"character":"Godette",
+			"text": "[color=#00111a]Please report any bugs you find.\nHave fun using Godot VN.[/color]"
+		},
+		
+	]
+}
+

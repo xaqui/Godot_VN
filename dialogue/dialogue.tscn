@@ -1,7 +1,9 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://dialogue/dialogue.gd" type="Script" id=1]
 [ext_resource path="res://dialogue/images/default_background.png" type="Texture" id=2]
+[ext_resource path="res://dialogue/fonts/font.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://dialogue/images/textbox.png" type="Texture" id=4]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Button
@@ -140,6 +142,12 @@ func _pressed():
 script/source = "extends TextureRect
 "
 
+[sub_resource type="DynamicFont" id=12]
+font_data = ExtResource( 3 )
+
+[sub_resource type="Theme" id=13]
+default_font = SubResource( 12 )
+
 [sub_resource type="ShortCut" id=8]
 
 [sub_resource type="GDScript" id=9]
@@ -246,10 +254,33 @@ script = SubResource( 6 )
 [node name="BackgroundImage" type="TextureRect" parent="Panel/PictNext"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_top = -3.14978
+margin_bottom = -3.14978
 texture = ExtResource( 2 )
 expand = true
 stretch_mode = 6
 script = SubResource( 7 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CharacterControl" type="Control" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ItemControl" type="Control" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = 512.0
+mouse_filter = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -266,6 +297,51 @@ custom_constants/shadow_offset_x = 2
 align = 1
 valign = 2
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextBox" type="TextureRect" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -410.0
+margin_top = -170.0
+margin_right = 410.0
+margin_bottom = -40.0
+texture = ExtResource( 4 )
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameTag" type="Label" parent="Panel/TextBox"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -388.653
+margin_top = -115.0
+margin_right = -228.653
+margin_bottom = -86.0
+theme = SubResource( 13 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/TextBox"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -365.0
+margin_top = -84.0
+margin_right = 375.0
+margin_bottom = -23.0
+bbcode_enabled = true
+bbcode_text = "test"
+text = "test"
 __meta__ = {
 "_edit_use_anchors_": false
 }

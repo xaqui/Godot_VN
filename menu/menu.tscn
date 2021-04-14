@@ -15,7 +15,6 @@ font_data = SubResource( 1 )
 script/source = "extends Button
 
 func _pressed ():
-	get_node (\"/root/dialogue_loader\").page = 0
 	var err = get_tree ().change_scene (\"dialogue/dialogue.tscn\")
 	if err:
 		print(\"Can't change scene!\")
