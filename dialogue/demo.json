@@ -11,6 +11,7 @@
 			"character":"",
 			"text": "",
 			"font": "",
+			"size": 22,
 			"sprites": [ ],
 			"background": "",
 			"items": [ ],
@@ -23,11 +24,13 @@
 		{
 			"text": "[color=#ff0000]Godot VN Demo, press the button at the right to proceed.[/color]",
 			"font": "dialogue/fonts/font.ttf",
+			"size": 29
 		},
 		{
 			"character":"Godette",
 			"text": "[color=#00111a]Welcome to the godot VN demonstration.[/color]",
 			"font": "dialogue/fonts/Stanberry.ttf",
+			"size": 24,
 			"sprites": [
 				{
 					"path":"dialogue/character/godette/1.png",
@@ -66,12 +69,15 @@
 		{
 			"character":"Godette",
 			"text": "[color=#00111a]You can change the font.\nalso use [/color][wave][color=#00995c][b]BB Code[/b][/color][/wave]",
-			"font": "dialogue/fonts/font.ttf"
+			"font": "dialogue/fonts/font.ttf",
+			"size": 24
+			
 		},
 		{
 			"character":"Godette",
 			"text": "[color=#00111a]You can load items on screen, like this.[/color]",
 			"font": "dialogue/fonts/Stanberry.ttf",
+			"size": 24,
 			"items": [
 				{
 					"path":"dialogue/images/item.png",
@@ -110,17 +116,19 @@
 			"character":"",
 			"sprites": [ ],
 			"id": "a",
-			"text": "[color=#00111a]You have chosen [b]A[/b][/color]",
+			"text": "[color=#919191]You have chosen [b]A[/b][/color]",
 			"jump": "c",
-			"font": "dialogue/fonts/font.ttf"
+			"font": "dialogue/fonts/font.ttf",
+			"size": 26
 		},
 		{
 			"character":"",
 			"sprites": [ ],
 			"id": "b",
-			"text": "[color=#00111a]You have chosen [b]B[/b][/color]",
+			"text": "[color=#919191]You have chosen [b]B[/b][/color]",
 			"jump": "c",
-			"font": "dialogue/fonts/font.ttf"
+			"font": "dialogue/fonts/font.ttf",
+			"size": 26
 		},
 				{
 			"character":"Godette",
@@ -132,7 +140,8 @@
 			],
 			"id": "c",
 			"text": "[color=#00111a]If you pressed A, you will have seen A and skipped B, and the other way around too.[/color]",
-			"font": "dialogue/fonts/Stanberry.ttf"
+			"font": "dialogue/fonts/Stanberry.ttf",
+			"size": 24
 		},
 		{
 			"character":"Godette",

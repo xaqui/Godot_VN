@@ -142,22 +142,22 @@ func _pressed():
 script/source = "extends TextureRect
 "
 
-[sub_resource type="DynamicFont" id=12]
+[sub_resource type="DynamicFont" id=8]
 font_data = ExtResource( 3 )
 
-[sub_resource type="Theme" id=13]
-default_font = SubResource( 12 )
+[sub_resource type="Theme" id=9]
+default_font = SubResource( 8 )
 
-[sub_resource type="ShortCut" id=8]
+[sub_resource type="ShortCut" id=10]
 
-[sub_resource type="GDScript" id=9]
+[sub_resource type="GDScript" id=11]
 script/source = "extends Button
 
 func _pressed ():
 	get_parent ().get_parent ().next ()
 "
 
-[sub_resource type="GDScript" id=10]
+[sub_resource type="GDScript" id=12]
 script/source = "extends Button
 
 func _pressed ():
@@ -165,7 +165,7 @@ func _pressed ():
 	
 "
 
-[sub_resource type="GDScript" id=11]
+[sub_resource type="GDScript" id=13]
 script/source = "extends VBoxContainer
 "
 
@@ -325,7 +325,7 @@ margin_left = -388.653
 margin_top = -115.0
 margin_right = -228.653
 margin_bottom = -86.0
-theme = SubResource( 13 )
+theme = SubResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -340,8 +340,7 @@ margin_top = -84.0
 margin_right = 375.0
 margin_bottom = -23.0
 bbcode_enabled = true
-bbcode_text = "test"
-text = "test"
+scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -354,9 +353,9 @@ anchor_bottom = 1.0
 margin_left = -36.0
 margin_top = -20.0
 action_mode = 0
-shortcut = SubResource( 8 )
+shortcut = SubResource( 10 )
 text = ">>>"
-script = SubResource( 9 )
+script = SubResource( 11 )
 
 [node name="ButtonPrev" type="Button" parent="Panel"]
 anchor_top = 1.0
@@ -366,7 +365,7 @@ margin_right = 36.0
 disabled = true
 action_mode = 0
 text = "<<<"
-script = SubResource( 10 )
+script = SubResource( 12 )
 
 [node name="DialogueControl" type="VBoxContainer" parent="Panel"]
 visible = false
@@ -378,4 +377,4 @@ margin_left = -99.0
 margin_top = -57.0
 margin_right = 99.0
 margin_bottom = 57.0
-script = SubResource( 11 )
+script = SubResource( 13 )

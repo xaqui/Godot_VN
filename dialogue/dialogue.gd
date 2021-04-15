@@ -68,6 +68,10 @@ func go_to_page (i):
 		d.set_font_path ("res://" + x.get("font"))
 		f.set_font_data (d)
 		LabelDialog.get_theme ().set_default_font (f)
+	if x.get ("size"):
+		f = LabelDialog.get_theme ().get_default_font ()
+		f.set_size (x.get("size"))
+		LabelDialog.get_theme ().set_default_font (f)
 	if x.get ("sound"):
 		DialogueSound.stop ()
 		DialogueSound.set_stream (load (x.get("sound")))
@@ -174,7 +178,7 @@ func prev ():
 		var i = page - 1
 		while not data.dialogue[i].get ("sound") and i >= 0:
 			i = i - 1
-		if i >= 0 and load ((data.dialogue[i].get("sound")) != BackgroundSound.get_stream().get_path ()):
+		if i >= 0 and (load ((data.dialogue[i].get("sound"))).get_path() != BackgroundSound.get_stream().get_path ()):
 			BackgroundSound.stop ()
 			if data.dialogue[i].get("sound") != "":
 				BackgroundSound.set_stream (load (data.dialogue[i].get("sound")))
