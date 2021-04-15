@@ -13,7 +13,7 @@
 			"font": "",
 			"size": 22,
 			"sprites": [ ],
-			"background": "",
+			"background": "dialogue/images/default_background.png",
 			"items": [ ],
 			"id": "",
 			"music": "",
@@ -54,7 +54,7 @@
 		{
 			"character":"Godette",
 			"text": "[color=#00111a]Background pictures can be changed.[/color]",
-			"background": ""
+			"background": "dialogue/images/default_background2.png"
 		},
 		{
 			"character":"Godette",
@@ -96,6 +96,7 @@
 			"text": "[color=#00111a]All these effects will stay until replaced with a new one or an empty set.[/color]",
 			"music": "",
 			"sound": "",
+			"background": "dialogue/images/default_background.png",
 			"items": [ ]
 		},
 		{

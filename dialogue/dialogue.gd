@@ -159,7 +159,6 @@ func prev ():
 	if page > 0:
 		page = page - 1
 		go_to_page (page)
-	clear_items ()
 	ButtonNext.set_disabled (false)
 	if DialogueControl.get_children () != []:
 		for c in DialogueControl.get_children ():
@@ -168,29 +167,46 @@ func prev ():
 			InputMap.action_add_event ("next", i)
 		DialogueControl.hide ()
 	var x = data.dialogue[page]
-	if not x.get ("background"):
+	if x.get ("background") == null:
 		var i = page - 1
-		while (not data.dialogue[i].get("background") and i >= 0):
+		while ((data.dialogue[i].get("background") == null) and i >= 0):
 			i = i - 1
 		if i >= 0:
 			BackgroundImage.set_texture (load (data.dialogue[i].get("background")))
-	if not x.get ("sound"):
+	if x.get ("sound") == null:
 		var i = page - 1
-		while not data.dialogue[i].get ("sound") and i >= 0:
+		while ((data.dialogue[i].get("sound") == null) and i >= 0):
+			print("page "+String(i))
+			print(data.dialogue[i].get("sound"))
 			i = i - 1
 		if i >= 0 and (load ((data.dialogue[i].get("sound"))).get_path() != BackgroundSound.get_stream().get_path ()):
 			BackgroundSound.stop ()
 			if data.dialogue[i].get("sound") != "":
 				BackgroundSound.set_stream (load (data.dialogue[i].get("sound")))
 				BackgroundSound.play (0)
-	if not x.get ("items"):
+	if x.get ("items") == null:
 		var i = page - 1
-		while not data.dialogue[i].get ("items") and i >= 0:
+		while (data.dialogue[i].get("items") == null) and i >= 0:
 			i = i - 1
 		if i >= 0:
 			clear_items ()
 			for item in data.dialogue[i].items:
 				add_item (item.get("path"), item.get("x"), item.get("y"))
+	if x.get ("character") == null:
+		var i = page - 1
+		while (data.dialogue[i].get("character") == null) and i >= 0:
+			i = i - 1
+		NameLabel.set_text("")
+		if i >= 0:
+			NameLabel.set_text (data.dialogue[i].get("character"))
+	if x.get ("sprites") == null:
+		var i = page - 1
+		while (data.dialogue[i].get("sprites") == null) and i >= 0:
+			i = i - 1
+		clear_characters()
+		if i >= 0:
+			for character_sprite in data.dialogue[i].sprites:
+				add_character (character_sprite.path, 120, 30)
 
 func _ready ():
 	BackgroundImage = get_node ("Panel/PictNext/BackgroundImage")
